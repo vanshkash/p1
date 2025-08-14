@@ -18,6 +18,12 @@ const testimonials = [
     location: "Mumbai",
   },
   {
+    name: "Om Saaj Band",
+    quote: `⭐️⭐️⭐️⭐️⭐️
+Om Saaj Band + ANIL DJ & EVENTS = Baraat magic! The live dhol, brass, and mobile DJ setup kept the energy sky-high. Guests were dancing nonstop, and the fusion of tradition with modern beats was unforgettable. Highly recommend for a baraat that truly stands out!`,
+    location: "  — Groom, Ghaziabad Wedding",
+  },
+  {
     name: "Amit S.",
     quote: "Professional setup, amazing sound, and great vibes. Highly recommended!",
     location: "Ghaziabad",
