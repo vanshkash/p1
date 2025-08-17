@@ -2,9 +2,21 @@ export default function HomePage() {
   return (
     <section
       id="home"
-      className="bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white min-h-screen flex items-center justify-center px-6"
+      className="relative min-h-screen flex items-center justify-center px-6 text-white"
     >
-      <div className="text-center max-w-2xl">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/home.jpg" // Make sure this path is correct
+          alt="ANIL DJ setup"
+          className="w-full h-full object-cover"
+        />
+        {/* Optional dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      </div>
+
+      {/* Content on top of image */}
+      <div className="relative text-center max-w-2xl z-10">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-xl">
           ANIL DJ & EVENTS
         </h1>
