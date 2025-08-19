@@ -23,9 +23,40 @@ const galleryImages = [
     type: "video",
     // poster: "/images/onwheels.jpg",
   },
-  { src: "/images/ledscreen.jpg", alt: "LED display setup at night" },
-  { src: "/images/baaratcrowed.jpg", alt: "Baraat crowd dancing" },
-  { src: "/images/lighting.jpg", alt: "Custom lighting effects" },
+  {
+    src: "/images/event1.mp4",
+    alt: "Noida Event in action",
+    type: "video",
+    // poster: "/images/onwheels.jpg",
+  },
+  {
+    src: "/images/event2.mp4",
+    alt: "Ghaziabad Event in action",
+    type: "video",
+    // poster: "/images/onwheels.jpg",
+  },
+  {
+    src: "/images/onwheels3.mp4",
+    alt: "DJ on Wheels in action",
+    type: "video",
+    // poster: "/images/onwheels.jpg",
+  },
+  {
+    src: "/images/event3.mp4",
+    alt: "wedding event setup in action",
+    type: "video",
+    // poster: "/images/onwheels.jpg",
+  },
+  {
+    src: "/images/miniwheels.mp4",
+    alt: "DJ on 'Mini Wheels' in action",
+    type: "video",
+    // poster: "/images/onwheels.jpg",
+  },
+  
+  // { src: "/images/ledscreen.jpg", alt: "LED display setup at night" },
+  // { src: "/images/baaratcrowed.jpg", alt: "Baraat crowd dancing" },
+  // { src: "/images/lighting.jpg", alt: "Custom lighting effects" },
   { src: "/images/djbooth.png", alt: "DJ booth with fog machine" },
   { src: "/images/stagesound.jpg", alt: "Wedding stage with sound system" },
 ];
