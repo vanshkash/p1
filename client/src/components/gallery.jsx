@@ -12,51 +12,43 @@ import Captions from "yet-another-react-lightbox/plugins/captions";
 
 const galleryImages = [
   {
-    src: "/images/onwheels.mp4",
-    alt: "DJ on Wheels in action",
-    type: "video",
-    // poster: "/images/onwheels.jpg",
-  },
-  {
-    src: "/images/onwheels2.mp4",
-    alt: "DJ on Wheels in action",
-    type: "video",
-    // poster: "/images/onwheels.jpg",
-  },
-  {
-    src: "/images/event1.mp4",
-    alt: "Noida Event in action",
-    type: "video",
-    // poster: "/images/onwheels.jpg",
-  },
-  {
-    src: "/images/event2.mp4",
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702202/event1_vhb7fj.mp4",
     alt: "Ghaziabad Event in action",
     type: "video",
     // poster: "/images/onwheels.jpg",
   },
   {
-    src: "/images/onwheels3.mp4",
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702292/event2_p6noph.mp4",
+    alt: "Noida Event in action",
+    type: "video",
+    // poster: "/images/onwheels.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702945/event3_xt8fkw.mp4",
+    alt: "wedding Setup in Hapur",
+    type: "video",
+  },
+  {
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755701591/FULL_ENJOY_STAY_COOL_STAY_HAPPY_djonwheels_dj_dj_djpankaj_djviral_djsong_djcompetition_djvi_tobceb.mp4",
+    alt: "Dj On Wheels with Co2 Jet",
+    type: "video",
+  },
+  {
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755704484/onwheels2_is09iy.mp4",
+    alt: "Mobile Dj Setup + Dhol",
+    type: "video",
+    // poster: "/images/onwheels.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755704009/onwheels_sinrhv.mp4",
     alt: "DJ on Wheels in action",
     type: "video",
-    // poster: "/images/onwheels.jpg",
   },
   {
-    src: "/images/event3.mp4",
-    alt: "wedding event setup in action",
-    type: "video",
-    // poster: "/images/onwheels.jpg",
-  },
-  {
-    src: "/images/miniwheels.mp4",
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755703668/miniwheels_n33yjl.mp4",
     alt: "DJ on 'Mini Wheels' in action",
     type: "video",
-    // poster: "/images/onwheels.jpg",
   },
-  
-  // { src: "/images/ledscreen.jpg", alt: "LED display setup at night" },
-  // { src: "/images/baaratcrowed.jpg", alt: "Baraat crowd dancing" },
-  // { src: "/images/lighting.jpg", alt: "Custom lighting effects" },
   { src: "/images/djbooth.png", alt: "DJ booth with fog machine" },
   { src: "/images/stagesound.jpg", alt: "Wedding stage with sound system" },
 ];
