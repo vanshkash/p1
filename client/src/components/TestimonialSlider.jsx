@@ -63,7 +63,7 @@ export default function TestimonialSlider() {
   const handleDotClick = (index) => setCurrent(index);
 
   return (
-    <div className="relative max-w-3xl mx-auto px-4 py-16">
+    <div id="testimonials" className="relative max-w-3xl mx-auto px-4 py-16">
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-indigo-100 to-pink-100 rounded-3xl blur-sm z-0" />
 
