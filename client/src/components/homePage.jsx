@@ -11,7 +11,7 @@ export default function HomePage() {
   <img
     src="/images/home.jpg"
     alt="ANIL DJ setup"
-    className="w-full h-full object-cover blur-sm scale-105"
+    className="w-full h-full object-cover blur-sm"
   />
   <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 </div>
