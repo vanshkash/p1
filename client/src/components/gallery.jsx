@@ -49,8 +49,7 @@ const galleryImages = [
     alt: "DJ on 'Mini Wheels' in action",
     type: "video",
   },
-  { src: "/images/djbooth.png", alt: "DJ booth with fog machine" },
-  { src: "/images/stagesound.jpg", alt: "Wedding stage with sound system" },
+  // { src: "/images/djbooth.png", alt: "DJ booth with fog machine" },
 ];
 
 export default function GallerySection() {

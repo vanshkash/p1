@@ -12,15 +12,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <div className="text-2xl font-bold tracking-wide">
-            ANIL DJ & EVENTS
-          </div>
+          <img
+          src="/images/name.png" // Make sure this path is correct
+          alt="ANIL DJ setup"
+          className="object-contain h-7 w-auto cursor-pointer md:h-12"
+        />
           {/* Desktop Menu */}
 <div className="hidden md:flex space-x-6">
   <a href="#home" className="hover:text-yellow-400">Home</a>
   <a href="#services" className="hover:text-yellow-400">Services</a>
   <a href="#gallery" className="hover:text-yellow-400">Gallery</a>
-  <a href="#contact" className="hover:text-yellow-400">Contact</a>
+  <a href="#contact" className="hover:text-yellow-400">Contact Us</a>
   <a href="#testimonials" className="hover:text-yellow-400">Reviews</a>
 </div>
 
@@ -66,7 +68,7 @@ export default function Navbar() {
   <a href="#home" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Home</a>
   <a href="#services" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Services</a>
   <a href="#gallery" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Gallery</a>
-<a href="#contact" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Contact</a>
+<a href="#contact" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Contact Us</a>
 <a href="#testimonials" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Reviews</a>
 </div>
     </nav>

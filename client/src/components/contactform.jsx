@@ -3,20 +3,19 @@ import { useState } from 'react';
 
 export default function BookingForm() {
   const [success, setSuccess] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitted, isSubmitting },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const onSubmit = async (data) => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/bookings`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
@@ -24,21 +23,29 @@ export default function BookingForm() {
       console.log(result.message);
 
       setSuccess(true);
+      setShowToast(true);
 
-      // Optional redirect
-      // setTimeout(() => {
-      //   window.location.href = '#home';
-      // }, 3000);
+      // Hide toast after 3 seconds
+      setTimeout(() => {
+        setShowToast(false);
+      }, 3000);
     } catch (error) {
       console.error('Error submitting booking:', error);
     }
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md space-y-4">
-      <h1 className="text-3xl font-bold bg-blue-200 text-center">
-        ANIL DJ & EVENTS
-      </h1>
+    <div className="relative max-w-md mx-auto p-6 bg-white shadow-md rounded-md space-y-4">
+      {/* ✅ Centered Toast Message */}
+      {showToast && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                        bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50 
+                        max-w-xs w-full text-center whitespace-nowrap overflow-hidden text-ellipsis animate-fade-in">
+          ✅ Booking submitted successfully!
+        </div>
+      )}
+
+      <h1 className="text-3xl font-bold bg-blue-200 text-center">ANIL DJ & EVENTS</h1>
       <h2 className="text-xl font-bold text-center">DJ Booking Form</h2>
 
       {success ? (
@@ -46,9 +53,7 @@ export default function BookingForm() {
           <p className="text-blue-700 font-medium text-base">
             🎉 Thank you for your booking! We’ll be in touch soon to finalize the details.
           </p>
-          <p className="text-green-600 font-semibold text-lg">
-            ✅ Booking Submitted!
-          </p>
+          <p className="text-green-600 font-semibold text-lg">✅ Booking Submitted!</p>
         </div>
       ) : (
         <>
@@ -126,20 +131,20 @@ export default function BookingForm() {
             </div>
 
             {/* Submit */}
-<div className="space-y-2">
-  {isSubmitting && Object.keys(errors).length === 0 && (
-    <div className="text-yellow-600 text-center font-medium text-base animate-pulse">
-      ⏳ Submitting your booking... please wait.
-    </div>
-  )}
-  <button
-    type="submit"
-    disabled={isSubmitting}
-    className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-  >
-    {isSubmitting ? 'Submitting...' : 'Submit Booking'}
-  </button>
-</div>
+            <div className="space-y-2">
+              {isSubmitting && Object.keys(errors).length === 0 && (
+                <div className="text-yellow-600 text-center font-medium text-base animate-pulse">
+                  ⏳ Submitting your booking... please wait.
+                </div>
+              )}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit Booking'}
+              </button>
+            </div>
           </form>
         </>
       )}
