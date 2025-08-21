@@ -72,6 +72,7 @@ export default function BookingForm() {
             🎉 Thank you for your booking! We’ll be in touch soon to finalize the details.
           </p>
           <p className="text-green-600 font-semibold text-lg">✅ Booking Submitted!</p>
+          <div className="h-[20vh]" />
         </div>
       ) : (
         <>
