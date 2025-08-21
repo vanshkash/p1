@@ -94,7 +94,7 @@ export default function GallerySection() {
         <h2 className="text-5xl font-extrabold text-indigo-700 mb-4 tracking-wide drop-shadow-md">
           Event Gallery
         </h2>
-        <p className="text-lg text-gray-700 max-w-xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-700 max-w-xl mx-auto leading-relaxed font-extrabold">
           Glimpses of the <span className="text-purple-600 font-semibold">energy</span>, <span className="text-pink-600 font-semibold">setup</span>, and <span className="text-indigo-600 font-semibold">unforgettable moments</span> we create.
         </p>
         <div className="mt-4">

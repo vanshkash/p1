@@ -47,8 +47,8 @@ export default function ServicesPage() {
         <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 mb-4">
           Our Services
         </h2>
-        <p className="text-lg text-gray-700 max-w-xl mx-auto">
-          Explore what makes <span className="font-semibold">ANIL DJ & EVENTS</span> the heartbeat of every celebration.
+        <p className="text-lg text-gray-700 max-w-xl mx-auto font-extrabold">
+          Explore what makes <span className="font-black">ANIL DJ & EVENTS</span> the heartbeat of every celebration.
         </p>
       </div>
 
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             </div>
             <div className="p-6">
               <h3 className="text-2xl font-bold text-purple-700 mb-2">{service.title}</h3>
-              <p className="text-gray-800 leading-relaxed">{service.description}</p>
+              <p className="text-gray-800 leading-relaxed font-bold">{service.description}</p>
             </div>
           </div>
         ))}
