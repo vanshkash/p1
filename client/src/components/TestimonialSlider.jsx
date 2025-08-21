@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const testimonials = [
-    {
-      name: "Rajaji Haveli Restaurant",
-      quote: "ANIL DJ brought vibrant energy to our outdoor celebration. Guests loved the music and setup!",
-      location: "Hapur",
-    },
-    {
-      name: "Amar Ujala",
-      quote: "ANIL DJ energized our media event with flawless sound and crowd engagement. A true professional!",
-      location: "Hapur",
-    },
-    {
+  {
+    name: "Rajaji Haveli Restaurant",
+    quote: "ANIL DJ brought vibrant energy to our outdoor celebration. Guests loved the music and setup!",
+    location: "Hapur",
+  },
+  {
+    name: "Amar Ujala",
+    quote: "ANIL DJ energized our media event with flawless sound and crowd engagement. A true professional!",
+    location: "Hapur",
+  },
+  {
     name: "Ajay & Priya",
     quote: "ANIL DJ made our baraat unforgettable! The energy was electric.",
     location: "Mumbai",
@@ -34,7 +35,7 @@ Om Saaj Band + ANIL DJ & EVENTS = Baraat magic! The live dhol, brass, and mobile
     location: "Noida",
   },
   {
-      name: "Mehul T.",
+    name: "Mehul T.",
     quote: "Booked ANIL DJ for my sister’s wedding. Seamless coordination and top-notch sound!",
     location: "Meerut",
   },
@@ -44,10 +45,10 @@ Om Saaj Band + ANIL DJ & EVENTS = Baraat magic! The live dhol, brass, and mobile
     location: "Hapur",
   },
   {
-      name: "Corporate Team – Zentech",
-      quote: "Our annual party was a blast thanks to ANIL DJ. Professional, punctual, and energetic!",
-      location: "Greater Noida",
-    },
+    name: "Corporate Team – Zentech",
+    quote: "Our annual party was a blast thanks to ANIL DJ. Professional, punctual, and energetic!",
+    location: "Greater Noida",
+  },
 ];
 
 export default function TestimonialSlider() {
@@ -64,6 +65,24 @@ export default function TestimonialSlider() {
 
   return (
     <div id="testimonials" className="relative max-w-3xl mx-auto px-4 py-16">
+      {/* 🧠 Helmet for SEO */}
+      <Helmet>
+        <title>Client Testimonials | ANIL DJ & EVENTS</title>
+        <meta
+          name="description"
+          content="Read what clients say about ANIL DJ & EVENTS. From wedding baraats to corporate parties, our mobile DJ setup brings unforgettable energy."
+        />
+        <meta name="keywords" content="DJ reviews, Indian wedding DJ, baraat testimonials, ANIL DJ feedback" />
+        <meta name="author" content="Vansh | ANIL DJ & EVENTS" />
+        <meta property="og:title" content="Client Testimonials | ANIL DJ & EVENTS" />
+        <meta
+          property="og:description"
+          content="Discover how ANIL DJ & EVENTS transforms celebrations with high-energy music, mobile DJ setups, and unforgettable vibes."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anildjevents.netlify.app/testimonials" />
+      </Helmet>
+
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-indigo-100 to-pink-100 rounded-3xl blur-sm z-0" />
 

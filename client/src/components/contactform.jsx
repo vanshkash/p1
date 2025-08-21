@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 export default function BookingForm() {
   const [success, setSuccess] = useState(false);
@@ -25,7 +26,6 @@ export default function BookingForm() {
       setSuccess(true);
       setShowToast(true);
 
-      // Hide toast after 3 seconds
       setTimeout(() => {
         setShowToast(false);
       }, 3000);
@@ -36,6 +36,24 @@ export default function BookingForm() {
 
   return (
     <div className="relative max-w-md mx-auto p-6 bg-white shadow-md rounded-md space-y-4">
+      {/* 🧠 Helmet for SEO */}
+      <Helmet>
+        <title>Book Your Event | ANIL DJ & EVENTS</title>
+        <meta
+          name="description"
+          content="Book ANIL DJ & EVENTS for your wedding, reception, birthday, or corporate celebration. Fill out our quick form to get started."
+        />
+        <meta name="keywords" content="DJ booking, Indian wedding DJ, baraat DJ, ANIL DJ & EVENTS, event form" />
+        <meta name="author" content="Vansh | ANIL DJ & EVENTS" />
+        <meta property="og:title" content="Book Your Event | ANIL DJ & EVENTS" />
+        <meta
+          property="og:description"
+          content="Submit your event details and book ANIL DJ & EVENTS for an unforgettable celebration."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anildjevents.netlify.app/contact" />
+      </Helmet>
+
       {/* ✅ Centered Toast Message */}
       {showToast && (
         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 

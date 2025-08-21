@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -15,17 +16,15 @@ const galleryImages = [
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702202/event1_vhb7fj.mp4",
     alt: "Ghaziabad Event in action",
     type: "video",
-    // poster: "/images/onwheels.jpg",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702292/event2_p6noph.mp4",
     alt: "Noida Event in action",
     type: "video",
-    // poster: "/images/onwheels.jpg",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702945/event3_xt8fkw.mp4",
-    alt: "wedding Setup in Hapur",
+    alt: "Wedding Setup in Hapur",
     type: "video",
   },
   {
@@ -37,7 +36,6 @@ const galleryImages = [
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755704484/onwheels2_is09iy.mp4",
     alt: "Mobile Dj Setup + Dhol",
     type: "video",
-    // poster: "/images/onwheels.jpg",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755704009/onwheels_sinrhv.mp4",
@@ -49,7 +47,6 @@ const galleryImages = [
     alt: "DJ on 'Mini Wheels' in action",
     type: "video",
   },
-  // { src: "/images/djbooth.png", alt: "DJ booth with fog machine" },
 ];
 
 export default function GallerySection() {
@@ -63,7 +60,6 @@ export default function GallerySection() {
     poster: item.poster,
   }));
 
-  // 🛠️ Pause/mute Swiper videos when Lightbox opens
   useEffect(() => {
     const swiperVideos = document.querySelectorAll(".swiper-slide video");
 
@@ -85,6 +81,25 @@ export default function GallerySection() {
       id="gallery"
       className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-indigo-50 via-purple-100 to-pink-50"
     >
+      {/* 🧠 Helmet for SEO */}
+      <Helmet>
+        <title>Event Gallery | ANIL DJ & EVENTS</title>
+        <meta
+          name="description"
+          content="Explore high-energy Indian wedding baraats, DJ setups, and unforgettable moments from ANIL DJ & EVENTS."
+        />
+        <meta property="og:title" content="Event Gallery | ANIL DJ & EVENTS" />
+        <meta
+          property="og:description"
+          content="Visual highlights of our mobile DJ setups and electrifying events across Ghaziabad, Noida, Hapur and beyond."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dsagj1d3e/image/upload/v1755789529/galleryimg_qq3gyr.png"
+        />
+      </Helmet>
+
       {/* Decorative Gradient Overlay */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="w-full h-full bg-gradient-to-tr from-white/10 via-indigo-100/20 to-pink-100/10 blur-sm opacity-30" />
@@ -95,7 +110,9 @@ export default function GallerySection() {
           Event Gallery
         </h2>
         <p className="text-lg text-gray-700 max-w-xl mx-auto leading-relaxed font-extrabold">
-          Glimpses of the <span className="text-purple-600 font-semibold">energy</span>, <span className="text-pink-600 font-semibold">setup</span>, and <span className="text-indigo-600 font-semibold">unforgettable moments</span> we create.
+          Glimpses of the <span className="text-purple-600 font-semibold">energy</span>,{" "}
+          <span className="text-pink-600 font-semibold">setup</span>, and{" "}
+          <span className="text-indigo-600 font-semibold">unforgettable moments</span> we create.
         </p>
         <div className="mt-4">
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full" />
