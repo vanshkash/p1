@@ -5,29 +5,10 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from 'react-icons/fa';
-import { Helmet } from 'react-helmet-async';
 
 export default function FooterSection() {
   return (
     <>
-      {/* 🧠 Helmet for SEO */}
-      <Helmet>
-        <title>Connect with Us | ANIL DJ & EVENTS</title>
-        <meta
-          name="description"
-          content="Follow ANIL DJ & EVENTS on Instagram, Facebook, WhatsApp, and YouTube. Stay updated with our latest baraat setups and DJ events."
-        />
-        <meta name="keywords" content="ANIL DJ social links, DJ Instagram, DJ Facebook, DJ WhatsApp, DJ YouTube" />
-        <meta name="author" content="Vansh | ANIL DJ & EVENTS" />
-        <meta property="og:title" content="Connect with Us | ANIL DJ & EVENTS" />
-        <meta
-          property="og:description"
-          content="Join the ANIL DJ & EVENTS community online. Explore our electrifying baraats and mobile DJ setups."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://anildjevents.netlify.app/#footer" />
-      </Helmet>
-
       <footer className="bg-black text-white py-10 px-6 md:px-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           {/* Brand Info */}
