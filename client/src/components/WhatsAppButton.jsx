@@ -1,6 +1,4 @@
 // WhatsAppButton.jsx
-// import whatsappIcon from '/images/whatsapp.png'; // Place icon in your assets folder
-
 const WhatsAppButton = () => {
   return (
     <a

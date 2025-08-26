@@ -15,36 +15,43 @@ const galleryImages = [
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702202/event1_vhb7fj.mp4",
     alt: "Ghaziabad Event in action",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756197788/event1_uyzxhg.png",
     type: "video",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702292/event2_p6noph.mp4",
     alt: "Noida Event in action",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756199608/event2_phm6tx.png",
     type: "video",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702945/event3_xt8fkw.mp4",
     alt: "Wedding Setup in Hapur",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756199872/event_3_mufjsl.png",
     type: "video",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755701591/FULL_ENJOY_STAY_COOL_STAY_HAPPY_djonwheels_dj_dj_djpankaj_djviral_djsong_djcompetition_djvi_tobceb.mp4",
     alt: "Dj On Wheels with Co2 Jet",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756200666/onwhwwls1_prf2v7.jpg",
     type: "video",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755704484/onwheels2_is09iy.mp4",
     alt: "Mobile Dj Setup + Dhol",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756201233/mini_di_ow_wheels_qvucbi.png",
     type: "video",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755704009/onwheels_sinrhv.mp4",
     alt: "DJ on Wheels in action",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756203651/djonwheels_bggeff.png",
     type: "video",
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755703668/miniwheels_n33yjl.mp4",
     alt: "DJ on 'Mini Wheels' in action",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756202609/Vibrant_DJ_Setup_at_Sunset_kqbatq.png",
     type: "video",
   },
 ];
@@ -88,15 +95,9 @@ export default function GallerySection() {
           name="description"
           content="Explore high-energy Indian wedding baraats, DJ setups, and unforgettable moments from ANIL DJ & EVENTS."
         />
-        <meta property="og:title" content="Event Gallery | ANIL DJ & EVENTS" />
         <meta
-          property="og:description"
-          content="Visual highlights of our mobile DJ setups and electrifying events across Ghaziabad, Noida, Hapur and beyond."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dsagj1d3e/image/upload/v1755789529/galleryimg_qq3gyr.png"
+          name="keywords"
+          content="Anil DJ, DJ services, event gallery, wedding DJ, party DJ, corporate events, music entertainment, DJ setup, sound and lighting, dance floor, DJ photos, event highlights, celebration gallery, DJ equipment, DJ performances, event moments"
         />
       </Helmet>
 

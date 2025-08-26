@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const services = [
@@ -14,7 +15,7 @@ const services = [
     image: "/images/wheel.jpg",
   },
   {
-    title: "Wedding Baraat Sound",
+    title: "Wedding DJ Sound",
     description:
       "Powerful sound systems tailored for Indian wedding processions. Dhol beats, Bollywood mixes, and crowd-hyping DJ sets.",
     image: "/images/weddingsound.jpeg",
@@ -26,7 +27,7 @@ const services = [
     image: "/images/ledwall.jpg",
   },
   {
-    title: "DJ Setup",
+    title: "Professional DJ Setup",
     description:
       "Professional DJ setup with top-of-the-line equipment, ensuring high-quality sound and an unforgettable experience.",
     image: "/images/djsetup.jpg",
@@ -44,7 +45,7 @@ export default function ServicesPage() {
         />
         <meta
           name="keywords"
-          content="DJ services, Indian wedding DJ, baraat sound, LED display, mobile DJ, event packages, ANIL DJ & EVENTS"
+          content="DJ services, Indian wedding DJ, baraat sound, LED display, mobile DJ, event packages, ANIL DJ & EVENTS, best dj service in hapur"
         />
         <meta name="author" content="Vansh | ANIL DJ & EVENTS" />
 
@@ -90,24 +91,28 @@ export default function ServicesPage() {
 
         {/* Service Cards */}
         <div className="relative z-10 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-white/80 backdrop-blur-md rounded-xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-            >
-              <div className="overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-56 object-cover transition duration-300 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-purple-700 mb-2">{service.title}</h3>
-                <p className="text-gray-800 leading-relaxed font-bold">{service.description}</p>
-              </div>
-            </div>
-          ))}
+          {services.map((service, index) => {
+  const slug = service.title.toLowerCase().replace(/\s+/g, "-"); // e.g. "custom-event-packages"
+
+  return (
+    <Link to={`/services/${slug}`} key={index}>
+      <div className="group bg-white/80 backdrop-blur-md rounded-xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <div className="overflow-hidden">
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-64 object-cover transition duration-300 group-hover:scale-110"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-2xl font-bold text-purple-700 mb-2">{service.title}</h3>
+          <p className="text-gray-800 leading-relaxed font-bold">{service.description}</p>
+      <p className="font-bold text-blue-600 underline">Know more</p>
+        </div>
+      </div>
+    </Link>
+  );
+})}
         </div>
       </section>
     </>

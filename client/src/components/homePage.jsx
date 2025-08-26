@@ -13,7 +13,7 @@ export default function HomePage() {
         />
         <meta
           name="keywords"
-          content="Indian wedding DJ, baraat sound system, DJ on wheels, Hapur DJ, LED display DJ, ANIL DJ & EVENTS"
+          content="Indian wedding DJ, baraat sound system, DJ on wheels, Hapur DJ, LED display DJ, ANIL DJ & EVENTS HAPUR, Best DJ in Hapur. Best DJ in Noida"
         />
         <meta name="author" content="Vansh | ANIL DJ & EVENTS" />
 
@@ -44,7 +44,8 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/images/home.jpg"
+            src="https://res.cloudinary.com/dsagj1d3e/image/upload/v1756146704/home_xqcjlx.jpg"
+            loading="eager"
             alt="ANIL DJ setup with mobile sound system and LED lights"
             className="w-full h-full object-cover brightness-75"
           />

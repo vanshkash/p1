@@ -9,6 +9,11 @@ import ServicesPage from './components/servicePage';
 import WhatsAppButton from './components/WhatsAppButton';
 import TestimonialSlider from './components/TestimonialSlider';
 import ScrollToTop from './components/ScrollToTop';
+import CustomEventPackages from "./components/CustomEventPackages";
+import DJOnWheels from './components/DJOnWheels';
+import WeddingBaraatPage from './components/WeddingBaraatPage';
+import LedDisplaySetup from './components/LedDisplaySetup';
+import DjSetup from './components/DjSetup';
 
 function App() {
   return (
@@ -45,6 +50,37 @@ function App() {
             <FooterSection />
           </>
         } />
+        <Route path="/services/custom-event-packages" element={
+          <>
+            <CustomEventPackages />
+            <FooterSection />
+          </>
+        } />
+        <Route path="/services/dj-on-wheels" element={
+          <>
+            <DJOnWheels />
+            <FooterSection />
+          </>
+        } />
+        <Route path="/services/wedding-DJ-sound" element={
+          <>
+            <WeddingBaraatPage />
+            <FooterSection />
+          </>
+        } />
+        <Route path="/services/led-display-setup" element={
+          <>
+            <LedDisplaySetup />
+            <FooterSection />
+          </>
+        } />
+        <Route path="/services/Professional-DJ-Setup" element={
+          <>
+            <DjSetup />
+            <FooterSection />
+          </>
+            } />
+
 
         {/* Gallery Page */}
         <Route path="/gallery" element={
