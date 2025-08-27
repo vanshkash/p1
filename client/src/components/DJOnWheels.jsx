@@ -12,14 +12,14 @@ const DJOnWheels = () => {
           name="description"
           content="Transform your baraat into a street-level celebration with our DJ on Wheels service."
         />
-          <meta
-            name="keywords"
-            content="DJ on Wheels, Baraat on Wheels,Baraat on Wheels in Hapur,Baraat on Wheels in Noida, Baraat DJ, Indian wedding DJ, mobile DJ truck, dhol, ANIL DJ & EVENTS, college fest DJ, corporate event DJ"
-          />
-          <meta
-            name="author"
-            content="Vansh | ANIL DJ & EVENTS"
-          />
+        <meta
+          name="keywords"
+          content="DJ on Wheels, Baraat on Wheels,Baraat on Wheels in Hapur,Baraat on Wheels in Noida, Baraat DJ, Indian wedding DJ, mobile DJ truck, dhol, ANIL DJ & EVENTS, college fest DJ, corporate event DJ"
+        />
+        <meta
+          name="author"
+          content="Vansh | ANIL DJ & EVENTS"
+        />
         <meta
           property="og:title"
           content="Baraat on Wheels | ANIL DJ & EVENTS"
@@ -29,7 +29,7 @@ const DJOnWheels = () => {
           content="https://anildjevents.netlify.app/services/dj-on-wheels"
         />
       </Helmet>
-      
+
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Angled Gradient */}
@@ -44,10 +44,12 @@ const DJOnWheels = () => {
               Baraat on Wheels
             </h1>
             <h2 className="text-2xl md:text-3xl text-white font-semibold mb-6 animate-fade-in delay-300">
-            Turn Your Baraat Into a Street-Level Celebration
-          </h2>
+              Turn Your Baraat Into a Street-Level Celebration
+            </h2>
             <a
-              href="/contact"
+              href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20a%20baraat%20procession%20with%20your%20DJ-on-Wheels%20setup!"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-white text-pink-600 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition"
             >
               Book Your Baraat
@@ -148,12 +150,15 @@ const DJOnWheels = () => {
         <p className="text-lg mb-6 max-w-xl mx-auto">
           Book DJ on Wheels for your next event and let the streets come alive with sound, lights, and unforgettable energy.
         </p>
-        <Link
-          to="/contact"
+        <a
+          href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%E2%80%99m%20interested%20in%20booking%20ANIL%20DJ%20%26%20EVENTS%E2%80%99%20DJ-on-Wheels%20setup%20for%20a%20baraat.%20Could%20you%20please%20share%20the%20pricing%20and%20package%20details%3F"
+
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-white text-purple-700 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition"
         >
           Request a Quote
-        </Link>
+        </a>
       </section>
     </main>
   );

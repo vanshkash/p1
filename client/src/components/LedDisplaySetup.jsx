@@ -36,7 +36,9 @@ export default function LedDisplaySetup() {
               Modular LED walls, synced visuals, and branded content for unforgettable impact.
             </p>
             <a
-              href="/contact"
+              href="https://wa.me/918923426667?text=Hey%20Shivam%21%20I%E2%80%99m%20interested%20in%20ANIL%20DJ%20%26%20EVENTS%E2%80%99%20LED%20Display%20Setup.%20Could%20you%20share%20the%20pricing%20and%20available%20options%3F"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-white text-purple-700 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition"
             >
               Book Your Display
@@ -147,7 +149,9 @@ export default function LedDisplaySetup() {
           From weddings to festivals, our LED setup turns your vision into a visual spectacle.
         </p>
         <a
-          href="/contact"
+          href="https://wa.me/918923426667?text=Hey%20Shivam%21%20I%E2%80%99m%20interested%20in%20ANIL%20DJ%20%26%20EVENTS%E2%80%99%20LED%20Display%20Setup.%20Could%20you%20share%20the%20pricing%20and%20available%20options%3F"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-white text-purple-700 font-bold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition"
         >
           Book Now

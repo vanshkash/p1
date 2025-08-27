@@ -42,7 +42,9 @@ export default function CustomEventPackages() {
               All-in-one entertainment bundles for unforgettable celebrations.
             </p>
             <a
-              href="/contact"
+              href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20my%20upcoming%20event!"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-white text-pink-600 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition"
             >
               Book Your Package
@@ -64,55 +66,55 @@ export default function CustomEventPackages() {
       </section>
 
       {/* Features */}
-<section className="max-w-7xl mx-auto py-20 px-6">
-  <h2 className="text-3xl font-bold text-center text-purple-700 mb-12">
-    What’s Inside Your Package
-  </h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-    {[
-      {
-        title: "Live DJ & Sound System",
-        desc: "Seamless audio setup for corporate mixers, college fests, and music concerts.",
-        color: "bg-purple-100",
-      },
-      {
-        title: "LED Screens & Visuals",
-        desc: "High-res displays, sponsor loops, and branded content for any stage.",
-        color: "bg-pink-100",
-      },
-      {
-        title: "Dynamic Lighting & Ambiance",
-        desc: "Uplighting, moving heads, and wash effects that match your theme.",
-        color: "bg-yellow-100",
-      },
-      {
-        title: "Special Effects & Confetti",
-        desc: "Fog, haze, confetti blasts, and pyro to elevate key moments.",
-        color: "bg-indigo-100",
-      },
-      {
-        title: "Photography & Live Streaming",
-        desc: "Multi-camera shoots and real-time broadcast for hybrid experiences.",
-        color: "bg-rose-100",
-      },
-      {
-  title: "Event Hosting & Coordination",
-  desc: "A professional host guides the event and engages guests, while our team handles timing, vendors, and last-minute details.",
-  color: "bg-teal-100",
-},
-    ].map((item, i) => (
-      <div
-        key={i}
-        className={`p-6 rounded-xl shadow-md hover:shadow-xl transition ${item.color}`}
-      >
-        <h3 className="text-xl font-semibold mb-2 text-purple-800">
-          {item.title}
-        </h3>
-        <p className="text-gray-700">{item.desc}</p>
-      </div>
-    ))}
-  </div>
-</section>
+      <section className="max-w-7xl mx-auto py-20 px-6">
+        <h2 className="text-3xl font-bold text-center text-purple-700 mb-12">
+          What’s Inside Your Package
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {[
+            {
+              title: "Live DJ & Sound System",
+              desc: "Seamless audio setup for corporate mixers, college fests, and music concerts.",
+              color: "bg-purple-100",
+            },
+            {
+              title: "LED Screens & Visuals",
+              desc: "High-res displays, sponsor loops, and branded content for any stage.",
+              color: "bg-pink-100",
+            },
+            {
+              title: "Dynamic Lighting & Ambiance",
+              desc: "Uplighting, moving heads, and wash effects that match your theme.",
+              color: "bg-yellow-100",
+            },
+            {
+              title: "Special Effects & Confetti",
+              desc: "Fog, haze, confetti blasts, and pyro to elevate key moments.",
+              color: "bg-indigo-100",
+            },
+            {
+              title: "Photography & Live Streaming",
+              desc: "Multi-camera shoots and real-time broadcast for hybrid experiences.",
+              color: "bg-rose-100",
+            },
+            {
+              title: "Event Hosting & Coordination",
+              desc: "A professional host guides the event and engages guests, while our team handles timing, vendors, and last-minute details.",
+              color: "bg-teal-100",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className={`p-6 rounded-xl shadow-md hover:shadow-xl transition ${item.color}`}
+            >
+              <h3 className="text-xl font-semibold mb-2 text-purple-800">
+                {item.title}
+              </h3>
+              <p className="text-gray-700">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Gallery */}
       <section className="bg-gray-50 py-16 px-6">
@@ -158,7 +160,9 @@ export default function CustomEventPackages() {
           Tell us your vibe, your vision, and your venue—we’ll handle the rest.
         </p>
         <a
-          href="/contact"
+          href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20my%20upcoming%20event!"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-white text-purple-700 font-bold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition"
         >
           Book Now
@@ -167,10 +171,10 @@ export default function CustomEventPackages() {
           Trusted by many people across India
         </div>
         <div className="mt-6 mb-0">
-                <Link to="/services" className="text-white hover:underline">
-                  ← Back to Services
-                </Link>
-              </div>
+          <Link to="/services" className="text-white hover:underline">
+            ← Back to Services
+          </Link>
+        </div>
       </section>
     </main>
   );

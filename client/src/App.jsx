@@ -7,6 +7,7 @@ import HomePage from './components/homePage';
 import Navbar from './components/navbar';
 import ServicesPage from './components/servicePage';
 import WhatsAppButton from './components/WhatsAppButton';
+import CallButton from './components/CallButton';
 import TestimonialSlider from './components/TestimonialSlider';
 import ScrollToTop from './components/ScrollToTop';
 import CustomEventPackages from "./components/CustomEventPackages";
@@ -20,6 +21,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop /> {/* ✅ Scroll to Top */}
       <Navbar />
+      <CallButton />
       <WhatsAppButton />
 
       <Routes>
@@ -46,7 +48,7 @@ function App() {
         {/* Service Page */}
         <Route path="/services" element={
           <>
-            <ServicesPage />
+            <ServicesPage showHelmet={true} />
             <FooterSection />
           </>
         } />
@@ -85,7 +87,7 @@ function App() {
         {/* Gallery Page */}
         <Route path="/gallery" element={
           <>
-            <GallerySection />
+            <GallerySection showHelmet={true} />
             <FooterSection />
           </>
         } />
@@ -93,7 +95,7 @@ function App() {
         {/* Contact Page */}
         <Route path="/contact" element={
           <>
-            <ContactSection />
+            <ContactSection showHelmet={true} />
             <FooterSection />
           </>
         } />

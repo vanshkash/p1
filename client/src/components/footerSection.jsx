@@ -1,4 +1,5 @@
 // FooterSection.jsx
+import { FaMapMarkerAlt } from 'react-icons/fa';
 import {
   FaInstagram,
   FaFacebookF,
@@ -17,6 +18,20 @@ export default function FooterSection() {
             <p className="text-sm text-gray-400 mt-2">
               Electrifying baraats, mobile DJ setups, and unforgettable sound.
             </p>
+            <p className="text-sm text-gray-400 mt-2">
+              📞 <a href="tel:+918923426667" className="font-medium text-white">+91 89234 26667</a>
+            </p>
+            <p className="text-sm text-gray-400 mt-2">
+              📞 <a href="tel:+919837754630" className="font-medium text-white">+91 98377 54630</a>
+            </p>
+            <a
+              href="https://maps.app.goo.gl/RXGFUDX1LYSH3MTZ9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-400 mt-2 flex gap-2">
+              <FaMapMarkerAlt className="text-green-400 text-base" />
+              <span className="font-medium text-blue-300">Delhi Road Hapur, Uttar Pradesh 245101</span>
+            </a>
           </div>
 
           {/* Social Links */}

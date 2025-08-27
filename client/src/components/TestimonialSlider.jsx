@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-import { Helmet } from 'react-helmet-async';
 
 const testimonials = [
   {
@@ -65,24 +64,6 @@ export default function TestimonialSlider() {
 
   return (
     <div id="testimonials" className="relative max-w-3xl mx-auto px-4 py-16">
-      {/* 🧠 Helmet for SEO */}
-      <Helmet>
-        <title>Client Reviews | ANIL DJ & EVENTS</title>
-        <meta
-          name="description"
-          content="Read what clients say about ANIL DJ & EVENTS. From wedding baraats to corporate parties, our mobile DJ setup brings unforgettable energy."
-        />
-        <meta name="keywords" content="DJ reviews, Indian wedding DJ, baraat testimonials, ANIL DJ feedback" />
-        <meta name="author" content="Vansh | ANIL DJ & EVENTS" />
-        <meta property="og:title" content="Client Reviews | ANIL DJ & EVENTS" />
-        <meta
-          property="og:description"
-          content="Discover how ANIL DJ & EVENTS transforms celebrations with high-energy music, mobile DJ setups, and unforgettable vibes."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://anildjevents.netlify.app/reviews" />
-      </Helmet>
-
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-indigo-100 to-pink-100 rounded-3xl blur-sm z-0" />
 

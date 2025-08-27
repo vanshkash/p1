@@ -16,13 +16,21 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Booking Form Page -->
+  <url>
+    <loc>https://anildjevents.netlify.app/contact</loc>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Gallery Page -->
   <url>
     <loc>https://anildjevents.netlify.app/gallery</loc>
     <lastmod>2025-08-22</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- Reviews Page -->
@@ -30,14 +38,7 @@
     <loc>https://anildjevents.netlify.app/reviews</loc>
     <lastmod>2025-08-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
 
-  <!-- Booking Form Page -->
-  <url>
-    <loc>https://anildjevents.netlify.app/contact</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
 </urlset>

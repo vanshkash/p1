@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import HeroTypedText from "./HeroTypedText";
-
 export default function HomePage() {
   return (
     <>
@@ -9,7 +8,7 @@ export default function HomePage() {
         <title>ANIL DJ & EVENTS | Wedding DJ on Wheels in Hapur</title>
         <meta
           name="description"
-          content="High-energy Indian wedding DJ services with mobile setups, LED displays, and custom event packages. Book ANIL DJ & EVENTS for unforgettable baraats and celebrations."
+          content="Book ANIL DJ & EVENTS for unforgettable celebrations and baraats. High-energy Indian wedding DJ services with mobile setups, LED displays, and custom event packages."
         />
         <meta
           name="keywords"
@@ -26,15 +25,6 @@ export default function HomePage() {
         <meta property="og:image" content="https://anildjevents.netlify.app/images/home.jpg" />
         <meta property="og:url" content="https://anildjevents.netlify.app/" />
         <meta property="og:type" content="website" />
-
-        {/* Twitter Card (optional but powerful) */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ANIL DJ & EVENTS | Wedding DJ on Wheels" />
-        <meta
-          name="twitter:description"
-          content="Unforgettable Indian wedding DJ experiences with mobile sound systems and LED displays."
-        />
-        <meta name="twitter:image" content="https://anildjevents.netlify.app/images/home.jpg" />
       </Helmet>
 
       <section
@@ -60,12 +50,20 @@ export default function HomePage() {
           <div className="text-3xl font-bold md:text-3xl mb-8 text-blue-200">
             Bringing electrifying energy to your <HeroTypedText />
           </div>
-          <a
+          {/* <a
             href="#contact"
             className="inline-block text-white font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-yellow-400 shadow-lg hover:scale-105 transition duration-300"
           >
             Book Your Event
-          </a>
+          </a> */}
+          <a
+  href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20my%20upcoming%20event!"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block text-white font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-yellow-400 shadow-lg hover:scale-105 transition duration-300"
+>
+  Book Your Event
+</a>
         </div>
       </section>
     </>

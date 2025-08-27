@@ -34,14 +34,15 @@ const services = [
   },
 ];
 
-export default function ServicesPage() {
+export default function ServicesPage({ showHelmet = false }) {
   return (
     <>
-      <Helmet>
-        <title>Services | ANIL DJ & EVENTS</title>
-        <meta
-          name="description"
-          content="Explore our full range of services including DJ on Wheels, LED displays, wedding baraat sound systems, and custom event packages tailored for unforgettable celebrations."
+      {showHelmet && (
+        <Helmet>
+          <title>Services | ANIL DJ & EVENTS</title>
+          <meta
+            name="description"
+            content="Explore our full range of services including DJ on Wheels, LED displays, wedding baraat sound systems, and custom event packages tailored for unforgettable celebrations."
         />
         <meta
           name="keywords"
@@ -68,6 +69,7 @@ export default function ServicesPage() {
         />
         <meta name="twitter:image" content="https://anildjevents.netlify.app/images/djsetup.jpg" />
       </Helmet>
+      )}
 
       <section
         id="services"

@@ -5,7 +5,6 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
@@ -56,7 +55,7 @@ const galleryImages = [
   },
 ];
 
-export default function GallerySection() {
+export default function GallerySection({ showHelmet = false }) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -89,6 +88,8 @@ export default function GallerySection() {
       className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-indigo-50 via-purple-100 to-pink-50"
     >
       {/* 🧠 Helmet for SEO */}
+      {showHelmet && (
+
       <Helmet>
         <title>Event Gallery | ANIL DJ & EVENTS</title>
         <meta
@@ -100,6 +101,7 @@ export default function GallerySection() {
           content="Anil DJ, DJ services, event gallery, wedding DJ, party DJ, corporate events, music entertainment, DJ setup, sound and lighting, dance floor, DJ photos, event highlights, celebration gallery, DJ equipment, DJ performances, event moments"
         />
       </Helmet>
+      )}
 
       {/* Decorative Gradient Overlay */}
       <div className="absolute inset-0 pointer-events-none z-0">
