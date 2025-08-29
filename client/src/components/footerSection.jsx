@@ -29,7 +29,7 @@ export default function FooterSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gray-400 mt-2 flex gap-2">
-              <FaMapMarkerAlt className="text-green-400 text-base" />
+              <FaMapMarkerAlt className="text-white text-base" />
               <span className="font-medium text-blue-300">Delhi Road Hapur, Uttar Pradesh 245101</span>
             </a>
           </div>

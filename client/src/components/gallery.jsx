@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Lightbox from "yet-another-react-lightbox";
+import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import Captions from "yet-another-react-lightbox/plugins/captions";
 
-const galleryImages = [
+const galleryItems = [
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702202/event1_vhb7fj.mp4",
     alt: "Ghaziabad Event in action",
@@ -31,20 +29,26 @@ const galleryImages = [
   },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755701591/FULL_ENJOY_STAY_COOL_STAY_HAPPY_djonwheels_dj_dj_djpankaj_djviral_djsong_djcompetition_djvi_tobceb.mp4",
-    alt: "Dj On Wheels with Co2 Jet",
+    alt: "Dj On Wheels + Smoke Gun",
     poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756200666/onwhwwls1_prf2v7.jpg",
     type: "video",
   },
   {
-    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755704484/onwheels2_is09iy.mp4",
-    alt: "Mobile Dj Setup + Dhol",
-    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756201233/mini_di_ow_wheels_qvucbi.png",
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1756484731/noidaevent1_jvdgxe.mp4",
+    alt: "DJ with Crowd in Noida",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756484805/noidaevent2_upjrfk.jpg",
     type: "video",
   },
+  // {
+  //   src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1756483512/hapurevent_mghgrl.mp4",
+  //   alt: "Setup for Event",
+  //   poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756485031/2296ab85-7ea2-4832-82c7-baee345b1d71.png",
+  //   type: "video",
+  // },
   {
-    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755704009/onwheels_sinrhv.mp4",
-    alt: "DJ on Wheels in action",
-    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756203651/djonwheels_bggeff.png",
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1756484306/noidaevent2_r9nl1g.mp4",
+    alt: "DJ + Crowd in Noida",
+    poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756484802/noidaevent1_jcuefp.jpg",
     type: "video",
   },
   {
@@ -55,62 +59,38 @@ const galleryImages = [
   },
 ];
 
-export default function GallerySection({ showHelmet = false }) {
+export default function SpotlightGallery() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  const slides = galleryImages.map((item) => ({
-    src: item.src,
-    description: item.alt,
-    type: item.type || "image",
-    poster: item.poster,
-  }));
-
   useEffect(() => {
-    const swiperVideos = document.querySelectorAll(".swiper-slide video");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(({ isIntersecting, target }) => {
+          target.muted = true;
+          isIntersecting ? target.play() : target.pause();
+        });
+      },
+      { threshold: 0.6 }
+    );
 
-    if (open) {
-      swiperVideos.forEach((vid) => {
-        vid.pause();
-        vid.muted = true;
-      });
-    } else {
-      swiperVideos.forEach((vid) => {
-        vid.play();
-        vid.muted = true;
-      });
-    }
-  }, [open]);
+    const videos = document.querySelectorAll(".swiper-slide video");
+    videos.forEach((video) => observer.observe(video));
+
+    return () => videos.forEach((video) => observer.unobserve(video));
+  }, []);
 
   return (
-    <section
-      id="gallery"
-      className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-indigo-50 via-purple-100 to-pink-50"
-    >
-      {/* 🧠 Helmet for SEO */}
-      {showHelmet && (
-
-      <Helmet>
-        <title>Event Gallery | ANIL DJ & EVENTS</title>
-        <meta
-          name="description"
-          content="Explore high-energy Indian wedding baraats, DJ setups, and unforgettable moments from ANIL DJ & EVENTS."
-        />
-        <meta
-          name="keywords"
-          content="Anil DJ, DJ services, event gallery, wedding DJ, party DJ, corporate events, music entertainment, DJ setup, sound and lighting, dance floor, DJ photos, event highlights, celebration gallery, DJ equipment, DJ performances, event moments"
-        />
-      </Helmet>
-      )}
-
-      {/* Decorative Gradient Overlay */}
+    <section className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 shadow-xl">
+      {/* 🌈 Decorative Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="w-full h-full bg-gradient-to-tr from-white/10 via-indigo-100/20 to-pink-100/10 blur-sm opacity-30" />
       </div>
 
+      {/* 🎬 Header */}
       <div className="relative z-10 text-center mb-16">
         <h2 className="text-5xl font-extrabold text-indigo-700 mb-4 tracking-wide drop-shadow-md">
-          Event Gallery
+          Gallery
         </h2>
         <p className="text-lg text-gray-700 max-w-xl mx-auto leading-relaxed font-extrabold">
           Glimpses of the <span className="text-purple-600 font-semibold">energy</span>,{" "}
@@ -122,17 +102,18 @@ export default function GallerySection({ showHelmet = false }) {
         </div>
       </div>
 
+      {/* 🎯 Swiper Slider */}
       <Swiper
         modules={[Navigation, Autoplay, Pagination]}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3500, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         spaceBetween={40}
         slidesPerView={1}
-        className="max-w-4xl mx-auto"
+        className="max-w-3xl mx-auto"
       >
-        {galleryImages.map((item, i) => (
+        {galleryItems.map((item, i) => (
           <SwiperSlide key={i}>
             <div className="flex justify-center">
               <div
@@ -143,24 +124,16 @@ export default function GallerySection({ showHelmet = false }) {
                 }}
               >
                 <div className="relative">
-                  {item.type === "video" ? (
-                    <video
-                      src={item.src}
-                      poster={item.poster}
-                      className="w-full h-[400px] object-cover"
-                      muted
-                      loop
-                      autoPlay
-                      playsInline
-                      controls
-                    />
-                  ) : (
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  )}
+                  <video
+                    src={item.src}
+                    poster={item.poster}
+                    className="w-full h-[400px] object-cover"
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
                 </div>
                 <div className="p-5 text-center">
@@ -174,12 +147,18 @@ export default function GallerySection({ showHelmet = false }) {
         ))}
       </Swiper>
 
+      {/* 💡 Lightbox Viewer */}
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={slides}
         index={index}
-        plugins={[Zoom, Captions]}
+        plugins={[Video]}
+        slides={galleryItems.map((item) => ({
+          type: "video",
+          sources: [{ src: item.src, type: "video/mp4" }],
+          poster: item.poster,
+          description: item.alt,
+        }))}
         render={{
           slide: ({ slide, offset }) =>
             slide.type === "video" ? (
@@ -190,19 +169,19 @@ export default function GallerySection({ showHelmet = false }) {
                 style={{ maxHeight: "80vh", maxWidth: "100%", margin: "0 auto" }}
                 poster={slide.poster}
                 onLoadedData={(e) => {
+                  const video = e.target;
                   if (offset === 0) {
-                    e.target.play();
-                    e.target.muted = false;
+                    video.play();
+                    video.muted = false;
                   } else {
-                    e.target.pause();
-                    e.target.muted = true;
+                    video.pause();
+                    video.muted = true;
                   }
                 }}
               >
-                <source src={slide.src} type="video/mp4" />
-                Your browser does not support the video tag.
+                <source src={slide.sources[0].src} type="video/mp4" />
               </video>
-            ) : undefined,
+            ) : null,
         }}
       />
     </section>

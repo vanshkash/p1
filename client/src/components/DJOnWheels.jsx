@@ -2,8 +2,40 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import GallerySection from './gallery';
+import DJGallery from './DJOnWheelsGallery';
+import StatsSection from "./StatsSection";
+import { useEffect, useRef } from 'react';
 
 const DJOnWheels = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      },
+      {
+        threshold: 0.5, // Adjust based on how much visibility you want
+      }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
   return (
     <main className="bg-white text-gray-800">
       <Helmet>
@@ -39,8 +71,8 @@ const DJOnWheels = () => {
 
         {/* Content Grid */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="text-white space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+          <div className="text-white space-y-6 animate-fade-in ">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight ">
               Baraat on Wheels
             </h1>
             <h2 className="text-2xl md:text-3xl text-white font-semibold mb-6 animate-fade-in delay-300">
@@ -55,13 +87,38 @@ const DJOnWheels = () => {
               Book Your Baraat
             </a>
           </div>
-          <div className="animate-fade-in delay-200">
-            <div className="rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform">
-              <img
-                src="/images/wheels.jpg"
-                alt="Custom Event Packages"
-                className="w-full h-auto object-cover"
-              />
+          <div className="animate-fade-in">
+            <div className="
+                max-w-sm mx-auto
+                cursor-pointer
+                group
+                relative
+                p-1
+                rounded-xl
+                bg-gradient-to-br
+                from-yellow-300
+                via-red-400
+                to-green-500
+                shadow-xl
+                hover:scale-105
+                focus:outline-none
+                focus:ring-4
+                focus:ring-pink-300
+                transition-transform
+              ">
+             <video
+  ref={videoRef}
+  src="https://res.cloudinary.com/dsagj1d3e/video/upload/v1756364254/herovideo_l1zxz2.mp4"
+  poster="/images/onwheelshero.png"
+  className="w-full aspect-square object-cover"
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  controls
+  aria-label="DJ on Wheels in action"
+/>
             </div>
           </div>
         </div>
@@ -77,6 +134,17 @@ const DJOnWheels = () => {
           DJ on Wheels is ANIL DJ & EVENTS’s flagship mobile experience — a high-energy, road-ready DJ setup built for Indian wedding baraats, college festivals, corporate activations, and concert pre-shows. We bring the beats, the visuals, and the vibe directly to your venue.
         </p>
       </section>
+      <section className="py-16 px-6 max-w-5xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-4 text-purple-700">
+          Why Book DJ on Wheels with Us?
+        </h2>
+        <p className="text-lg leading-relaxed text-gray-700">
+          Because your celebration deserves more than just sound—it deserves a spectacle. Our DJ on Wheels setup transforms ordinary streets into high-energy dance floors, blending traditional dhol with modern beats, synchronized lighting, and crowd-pumping audio. Whether it’s a baraat, college fest, or corporate launch, we bring the vibe, the visuals, and the volume—right to your doorstep.
+        </p>
+      </section>
+      
+      {/* Gallery */}
+      <DJGallery />
 
       {/* Features Section */}
       <section className="max-w-7xl mx-auto py-20 px-6">
@@ -129,21 +197,7 @@ const DJOnWheels = () => {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6 text-purple-700">Perfect For</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg text-gray-700">
-          <div>💍 Wedding Baraats — Live DJ procession with full sound rig</div>
-          <div>🏫 College Festivals — Campus-wide hype and crowd engagement</div>
-          <div>🏢 Corporate Events — Branded mobile presence with AV punch</div>
-          <div>🎶 Concert Pre-Parties — Street-level buzz before the main stage</div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <GallerySection />
-
-
+      <StatsSection />
       {/* Booking CTA */}
       <section className="py-20 px-6 text-center bg-gradient-to-r from-purple-600 to-pink-500 text-white">
         <h2 className="text-4xl font-bold mb-4">Ready to Roll?</h2>

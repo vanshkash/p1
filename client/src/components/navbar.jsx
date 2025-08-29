@@ -28,6 +28,7 @@ export default function Navbar() {
             <Link to="/gallery" className="hover:text-yellow-400">Gallery</Link>
             <Link to="/contact" className="hover:text-yellow-400">Contact Us</Link>
             <Link to="/reviews" className="hover:text-yellow-400">Reviews</Link>
+            <Link to="/about" className="hover:text-yellow-400">About Us</Link>
 
           </div>
 
@@ -75,6 +76,7 @@ export default function Navbar() {
         <Link to="/gallery" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Gallery</Link>
         <Link to="/contact" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Contact Us</Link>
         <Link to="/reviews" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">Reviews</Link>
+        <Link to="/about" onClick={handleLinkClick} className="block text-lg font-semibold hover:text-yellow-400 transition">About Us</Link>
       </div>
     </nav>
   );

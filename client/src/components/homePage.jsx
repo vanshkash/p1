@@ -50,12 +50,6 @@ export default function HomePage() {
           <div className="text-3xl font-bold md:text-3xl mb-8 text-blue-200">
             Bringing electrifying energy to your <HeroTypedText />
           </div>
-          {/* <a
-            href="#contact"
-            className="inline-block text-white font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-yellow-400 shadow-lg hover:scale-105 transition duration-300"
-          >
-            Book Your Event
-          </a> */}
           <a
   href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20my%20upcoming%20event!"
   target="_blank"

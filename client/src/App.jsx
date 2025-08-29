@@ -15,6 +15,8 @@ import DJOnWheels from './components/DJOnWheels';
 import WeddingBaraatPage from './components/WeddingBaraatPage';
 import LedDisplaySetup from './components/LedDisplaySetup';
 import DjSetup from './components/DjSetup';
+import StatsSection from "./components/StatsSection";
+// import AboutPage from './components/AboutPage';
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
                 <TestimonialSlider />
               </div>
             </section>
+            <StatsSection />
+        <AboutPage/>
             <FooterSection />
           </>
         } />
@@ -100,6 +104,14 @@ function App() {
           </>
         } />
 
+        {/* About Page */}
+        <Route path="/about" element={
+          <>
+            <AboutPage />
+            <FooterSection />
+          </>
+        } />
+
         {/* Reviews Page */}
         <Route path="/reviews" element={
           <>
@@ -119,5 +131,6 @@ function App() {
     </BrowserRouter>
   );
 }
+import AboutPage from './components/AboutPage';
 
 export default App;
