@@ -12,7 +12,7 @@ const services = [
     title: "DJ on Wheels",
     description:
       "ANIL DJ & EVENTS presents “DJ on Wheels”—a high-energy mobile entertainment experience designed for Indian wedding baraats and outdoor celebrations",
-    image: "/images/wheel.jpg",
+    image: "/images/herowheels.png",
   },
   {
     title: "Wedding DJ Sound",
@@ -60,14 +60,6 @@ export default function ServicesPage({ showHelmet = false }) {
         <meta property="og:url" content="https://anildjevents.netlify.app/services" />
         <meta property="og:type" content="website" />
 
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Services | ANIL DJ & EVENTS" />
-        <meta
-          name="twitter:description"
-          content="Explore DJ services, LED setups, and custom packages for unforgettable Indian weddings and events."
-        />
-        <meta name="twitter:image" content="https://anildjevents.netlify.app/images/djsetup.jpg" />
       </Helmet>
       )}
 

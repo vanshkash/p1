@@ -1,7 +1,26 @@
 import React from 'react';
+import { Helmet } from "react-helmet-async";
 
-const AboutPage = () => {
+const AboutPage = ( {showHelmet = false}) => {
   return (
+    <>
+    {showHelmet && (
+     <Helmet>
+        <title>About Us | ANIL DJ & EVENTS</title>
+        <meta
+          name="description"
+          content="Discover ANIL DJ & EVENTS—India’s most electrifying mobile DJ brand. We deliver immersive audio-visual experiences for weddings, festivals, and corporate events."
+        />
+        <meta property="og:title" content="About Us | ANIL DJ & EVENTS" />
+        <meta
+          property="og:description"
+          content="From baraats to college fests, ANIL DJ & EVENTS orchestrates unforgettable moments with curated sound, dynamic visuals, and authentic energy."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anildjevents.netlify.app/about" />
+      </Helmet>
+    )}
+
     <section className="bg-gradient-to-br from-black via-neutral-800 to-neutral-800 text-white px-6 py-20 md:px-24 lg:px-32">
       <div className="max-w-6xl mx-auto space-y-24">
 
@@ -81,6 +100,7 @@ const AboutPage = () => {
         </section>
       </div>
     </section>
+    </>
   );
 };
 

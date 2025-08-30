@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
+import { Helmet } from "react-helmet-async";
 
 const galleryItems = [
   {
@@ -39,12 +40,6 @@ const galleryItems = [
     poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756484805/noidaevent2_upjrfk.jpg",
     type: "video",
   },
-  // {
-  //   src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1756483512/hapurevent_mghgrl.mp4",
-  //   alt: "Setup for Event",
-  //   poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756485031/2296ab85-7ea2-4832-82c7-baee345b1d71.png",
-  //   type: "video",
-  // },
   {
     src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1756484306/noidaevent2_r9nl1g.mp4",
     alt: "DJ + Crowd in Noida",
@@ -59,7 +54,7 @@ const galleryItems = [
   },
 ];
 
-export default function SpotlightGallery() {
+export default function SpotlightGallery( {showHelmet = false}) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -81,6 +76,28 @@ export default function SpotlightGallery() {
   }, []);
 
   return (
+    <>
+    {showHelmet && (
+     <Helmet>
+    <title>Gallery | ANIL DJ & EVENTS</title>
+    <meta
+      name="description"
+      content="Explore our gallery of high-energy DJ setups, vibrant wedding moments, and crowd-hyping performances across India. Experience the vibe visually."
+    />
+    <meta property="og:title" content="Gallery | ANIL DJ & EVENTS" />
+    <meta
+      property="og:description"
+      content="Glimpses of the energy, setup, and unforgettable moments we create—from Ghaziabad to Noida to Hapur."
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/dsagj1d3e/image/upload/v1756197788/event1_uyzxhg.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://anildjevents.netlify.app/gallery" />
+  </Helmet>
+    )}
+
     <section className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 shadow-xl">
       {/* 🌈 Decorative Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -185,5 +202,6 @@ export default function SpotlightGallery() {
         }}
       />
     </section>
+          </>
   );
 }

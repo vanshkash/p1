@@ -1,8 +1,29 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const WeddingBaraatPage = () => {
   return (
     <>
+    <Helmet>
+        <title>Wedding DJ Sound | ANIL DJ & EVENTS</title>
+        <meta
+          name="description"
+          content="High-energy DJ sound systems for Indian wedding processions. Dhol beats, Bollywood mixes, and crowd-hyping DJ sets by ANIL DJ & EVENTS."
+        />
+        <meta
+          property="og:title"
+          content="Wedding DJ Sound | ANIL DJ & EVENTS"
+        />
+        <meta
+          property="og:description"
+          content="Bring the energy of a full-blown celebration to the dance floor with our powerful DJ sound setup. Book now for unforgettable baraat vibes!"
+        />
+        <meta
+          property="og:image"
+          content="https://yourdomain.com/images/weddingsound.jpeg"
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Angled Gradient */}

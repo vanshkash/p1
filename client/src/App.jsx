@@ -107,7 +107,7 @@ function App() {
         {/* About Page */}
         <Route path="/about" element={
           <>
-            <AboutPage />
+            <AboutPage  showHelmet={true} />
             <FooterSection />
           </>
         } />
