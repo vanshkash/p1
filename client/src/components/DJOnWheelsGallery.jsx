@@ -18,7 +18,7 @@ const galleryItems = [
   },
   {
     type: 'video',
-    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1756315864/onwheels3_chsj4i.mp4",
+    src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755701591/FULL_ENJOY_STAY_COOL_STAY_HAPPY_djonwheels_dj_dj_djpankaj_djviral_djsong_djcompetition_djvi_tobceb.mp4",
     alt: "Setup Before Baraat",
     poster: "https://res.cloudinary.com/dsagj1d3e/image/upload/v1756317036/5_a6ewvk.png",
   },

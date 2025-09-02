@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 export default function ContactSection({ showHelmet = false }) {
   return (
     <>
-    🧠 Helmet for SEO
+    {/* 🧠 Helmet for SEO */}
       {showHelmet && (
       <Helmet>
         <title>Book Your Event | ANIL DJ & EVENTS</title>
