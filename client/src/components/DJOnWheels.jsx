@@ -22,7 +22,7 @@ const DJOnWheels = () => {
         }
       },
       {
-        threshold: 0.5, // Adjust based on how much visibility you want
+        threshold: 0.5,
       }
     );
 
@@ -39,7 +39,7 @@ const DJOnWheels = () => {
   return (
     <main className="bg-white text-gray-800">
       <Helmet>
-        <title>Baraat on Wheels | ANIL DJ & EVENTS</title>
+        <title>DJ on Wheels | ANIL DJ & EVENTS</title>
         <meta
           name="description"
           content="Transform your baraat into a street-level celebration with our DJ on Wheels service."
@@ -63,78 +63,81 @@ const DJOnWheels = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Angled Gradient */}
-        <div className="absolute inset-0">
-          <div className="w-full h-full bg-gradient-to-tr from-pink-500 to-purple-700 -skew-y-12 transform origin-top-left" />
+      <section className="relative bg-black text-white overflow-hidden">
+        {/* Desktop Background */}
+        <div
+          className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat blur-[1.5px]"
+          style={{
+            backgroundImage: "url('/images/desktop-djonwheels.png')", //  for desktop image
+          }}
+        >
+          <div className="w-full h-full bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        </div>
+
+        {/* Mobile Background */}
+        <div
+          className="block md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px]"
+          style={{
+            backgroundImage: "url('/images/mobile-djonwheels.png')", //for  mobile image
+          }}
+        >
+          <div className="w-full h-full bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
         </div>
 
         {/* Content Grid */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="text-white space-y-6 animate-fade-in ">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight ">
-              Baraat on Wheels
+          {/* Text Content */}
+          <div className="space-y-6 animate-fade-in">
+            <h1
+              className="text-4xl md:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-violet-700 animate-glow"
+            >
+              Baraat On Wheels
             </h1>
-            <h2 className="text-2xl md:text-3xl text-white font-semibold mb-6 animate-fade-in delay-300">
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-white/90 drop-shadow-[0_0_14px_#ca8a04] animate-fade-in delay-300">
               Turn Your Baraat Into a Street-Level Celebration
             </h2>
             <a
               href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20a%20baraat%20procession%20with%20your%20DJ-on-Wheels%20setup!"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-pink-600 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition"
+              className="inline-block bg-gradient-to-r from-pink-500 to-yellow-400 hover:scale-105 duration-300 text-white font-bold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition"
             >
               Book Your Baraat
             </a>
           </div>
+
+          {/* Video Preview */}
           <div className="animate-fade-in">
-            <div className="
-                max-w-sm mx-auto
-                cursor-pointer
-                group
-                relative
-                p-1
-                rounded-xl
-                bg-gradient-to-br
-                from-yellow-300
-                via-red-400
-                to-green-500
-                shadow-xl
-                hover:scale-105
-                focus:outline-none
-                focus:ring-4
-                focus:ring-pink-300
-                transition-transform
-              ">
-             <video
-  ref={videoRef}
-  src="https://res.cloudinary.com/dsagj1d3e/video/upload/v1756364254/herovideo_l1zxz2.mp4"
-  poster="/images/onwheelshero.png"
-  className="w-full aspect-square object-cover"
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="auto"
-  controls
-  aria-label="DJ on Wheels in action"
-/>
+            <div className="max-w-sm mx-auto group relative p-1 rounded-xl bg-gradient-to-br from-yellow-300 via-red-400 to-green-500 shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-pink-300 transition-transform">
+              <video
+                ref={videoRef}
+                src="https://res.cloudinary.com/dsagj1d3e/video/upload/v1756364254/herovideo_l1zxz2.mp4"
+                poster="/images/onwheelshero.png"
+                className="w-full aspect-square object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                controls
+                aria-label="DJ on Wheels in action"
+              />
             </div>
           </div>
-        </div>
+        </div>pp
 
-        {/* Decorative Blur */}
+        {/* Decorative Blur Element */}
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full filter blur-3xl" />
       </section>
 
       {/* Description Section */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
+      <section className="py-6 md:py-16 px-6 max-w-5xl mx-auto">
         <h2 className="text-3xl font-semibold mb-4 text-purple-700">What Is DJ on Wheels?</h2>
         <p className="text-lg leading-relaxed text-gray-700">
           DJ on Wheels is ANIL DJ & EVENTS’s flagship mobile experience — a high-energy, road-ready DJ setup built for Indian wedding baraats, college festivals, corporate activations, and concert pre-shows. We bring the beats, the visuals, and the vibe directly to your venue.
         </p>
       </section>
-      <section className="py-16 px-6 max-w-5xl mx-auto">
+      <section className="py-6 px-6 max-w-5xl mx-auto">
         <h2 className="text-3xl font-semibold mb-4 text-purple-700">
           Why Book DJ on Wheels with Us?
         </h2>
@@ -142,7 +145,7 @@ const DJOnWheels = () => {
           Because your celebration deserves more than just sound—it deserves a spectacle. Our DJ on Wheels setup transforms ordinary streets into high-energy dance floors, blending traditional dhol with modern beats, synchronized lighting, and crowd-pumping audio. Whether it’s a baraat, college fest, or corporate launch, we bring the vibe, the visuals, and the volume—right to your doorstep.
         </p>
       </section>
-      
+
       {/* Gallery */}
       <DJGallery />
 

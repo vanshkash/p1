@@ -12,7 +12,7 @@ const services = [
     title: "DJ on Wheels",
     description:
       "ANIL DJ & EVENTS presents “DJ on Wheels”—a high-energy mobile entertainment experience designed for Indian wedding baraats and outdoor celebrations",
-    image: "/images/herowheels.png",
+    image: "/images/card-djonwheels.png",
   },
   {
     title: "Wedding DJ Sound",
