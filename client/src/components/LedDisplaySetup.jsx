@@ -47,7 +47,7 @@ export default function LedDisplaySetup() {
           <div className="animate-fade-in delay-200">
             <div className="rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform">
               <img
-                src="/images/ledwall.jpg"
+                src="/images/ledwall.webp"
                 alt="LED Display Setup"
                 className="w-full h-auto object-cover"
               />
@@ -115,7 +115,7 @@ export default function LedDisplaySetup() {
           LED in Action
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {["display1.jpg", "display2.jpg", "display3.jpg"].map((img, i) => (
+          {["display1.webp", "display2.webp", "display3.webp"].map((img, i) => (
             <img
               key={i}
               src={`/images/${img}`}

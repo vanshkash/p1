@@ -40,6 +40,16 @@ app.post('/api/bookings', async (req, res) => {
   }
 });
 
+// GET route to fetch all bookings
+app.get('/api/bookings', async (req, res) => {
+  try {
+    const bookings = await Booking.find();
+    res.status(200).json(bookings);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch bookings' });
+  }
+});
+
 // Use PORT from .env
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

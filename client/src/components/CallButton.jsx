@@ -6,8 +6,9 @@ const CallButton = () => {
       rel="noopener noreferrer"
     >
       <img
-        src="/images/callimage.png"
+        src="/images/callimage.webp"
         alt="Call ANIL DJ & EVENTS"
+        loading="lazy"
         className="w-14 h-14 hover:scale-110 transition-transform"
       />
     </a>

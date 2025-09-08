@@ -53,7 +53,7 @@ export default function CustomEventPackages() {
           <div className="animate-fade-in delay-200">
             <div className="rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform">
               <img
-                src="/images/custom_event.jpg"
+                src="/images/custom_event.webp"
                 alt="Custom Event Packages"
                 className="w-full h-auto object-cover"
               />
@@ -122,7 +122,7 @@ export default function CustomEventPackages() {
           Visual Vibes
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {["event1.jpg", "event2.jpg", "event3.jpg"].map(
+          {["event1.webp", "event2.webp", "event3.webp"].map(
             (img, i) => (
               <img
                 key={i}

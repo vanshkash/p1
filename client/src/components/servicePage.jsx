@@ -6,31 +6,31 @@ const services = [
   {
     title: "Custom Event Packages",
     description: "Bundle services like DJ, lighting, photography, and more",
-    image: "/images/custom_event.jpg",
+    image: "/images/custom_event.webp",
   },
   {
     title: "DJ on Wheels",
     description:
       "ANIL DJ & EVENTS presents “DJ on Wheels”—a high-energy mobile entertainment experience designed for Indian wedding baraats and outdoor celebrations",
-    image: "/images/card-djonwheels.png",
+    image: "/images/card-djonwheels.webp",
   },
   {
     title: "Wedding DJ Sound",
     description:
       "Powerful sound systems tailored for Indian wedding processions. Dhol beats, Bollywood mixes, and crowd-hyping DJ sets.",
-    image: "/images/weddingsound.jpeg",
+    image: "/images/weddingsound.webp",
   },
   {
     title: "LED Display Setup",
     description:
       "High-impact LED screens for live visuals, custom messages, and synced music effects",
-    image: "/images/ledwall.jpg",
+    image: "/images/ledwall.webp",
   },
   {
     title: "Professional DJ Setup",
     description:
       "Professional DJ setup with top-of-the-line equipment, ensuring high-quality sound and an unforgettable experience.",
-    image: "/images/djsetup.jpg",
+    image: "/images/djsetup.webp",
   },
 ];
 
@@ -95,6 +95,7 @@ export default function ServicesPage({ showHelmet = false }) {
           <img
             src={service.image}
             alt={service.title}
+            loading="lazy"
             className="w-full h-64 object-cover transition duration-300 group-hover:scale-110"
           />
         </div>

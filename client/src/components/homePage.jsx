@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import HeroTypedText from "./HeroTypedText";
+
 export default function HomePage() {
   return (
     <>
@@ -22,7 +23,7 @@ export default function HomePage() {
           property="og:description"
           content="Book the most energetic DJ experience for your Indian wedding. Mobile DJ, LED displays, and full event packages."
         />
-        <meta property="og:image" content="https://anildjevents.netlify.app/images/home.jpg" />
+        <meta property="og:image" content="https://anildjevents.netlify.app/images/home.webp" />
         <meta property="og:url" content="https://anildjevents.netlify.app/" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -31,14 +32,24 @@ export default function HomePage() {
         id="home"
         className="relative min-h-screen flex items-center justify-center px-6 text-white"
       >
-        {/* Background Image */}
+        {/* Background Image with AVIF & WebP support */}
         <div className="absolute inset-0">
-          <img
-            src="https://res.cloudinary.com/dsagj1d3e/image/upload/v1756146704/home_xqcjlx.jpg"
-            loading="eager"
-            alt="ANIL DJ setup with mobile sound system and LED lights"
-            className="w-full h-full object-cover brightness-75"
-          />
+          <picture>
+            <source
+              srcSet="https://res.cloudinary.com/dsagj1d3e/image/upload/f_avif,q_auto/v1756146704/home_xqcjlx.jpg"
+              type="image/avif"
+            />
+            <source
+              srcSet="https://res.cloudinary.com/dsagj1d3e/image/upload/f_webp,q_auto/v1756146704/home_xqcjlx.jpg"
+              type="image/webp"
+            />
+            <img
+              src="https://res.cloudinary.com/dsagj1d3e/image/upload/q_auto/v1756146704/home_xqcjlx.jpg"
+              loading="eager"
+              alt="ANIL DJ setup with mobile sound system and LED lights"
+              className="w-full h-full object-cover brightness-75"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-br from-black via-transparent to-black opacity-70"></div>
         </div>
 
@@ -51,13 +62,13 @@ export default function HomePage() {
             Bringing electrifying energy to your <HeroTypedText />
           </div>
           <a
-  href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20my%20upcoming%20event!"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block text-white font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-yellow-400 shadow-lg hover:scale-105 transition duration-300"
->
-  Book Your Event
-</a>
+            href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20my%20upcoming%20event!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-white font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-yellow-400 shadow-lg hover:scale-105 transition duration-300"
+          >
+            Book Your Event
+          </a>
         </div>
       </section>
     </>

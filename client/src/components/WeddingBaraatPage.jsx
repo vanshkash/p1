@@ -18,10 +18,6 @@ const WeddingBaraatPage = () => {
           property="og:description"
           content="Bring the energy of a full-blown celebration to the dance floor with our powerful DJ sound setup. Book now for unforgettable baraat vibes!"
         />
-        <meta
-          property="og:image"
-          content="https://yourdomain.com/images/weddingsound.jpeg"
-        />
         <meta property="og:type" content="website" />
       </Helmet>
       {/* Hero Section */}
@@ -50,7 +46,7 @@ const WeddingBaraatPage = () => {
           <div className="animate-fade-in delay-200">
             <div className="rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform">
               <img
-                src="/images/weddingsound.jpeg"
+                src="/images/weddingsound.webp"
                 alt="Wedding DJ Sound"
                 className="w-full h-auto object-cover"
               />

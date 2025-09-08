@@ -42,7 +42,7 @@ export default function DjSetup() {
           <div className="animate-fade-in delay-200">
             <div className="rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform">
               <img
-                src="/images/djsetup.jpg"
+                src="/images/djsetup.webp"
                 alt="DJ Setup"
                 className="w-full h-auto object-cover"
               />
@@ -110,7 +110,7 @@ export default function DjSetup() {
           Visual Vibes
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {["djsetup1.jpg", "djsetup2.jpg", "djsetup3.jpg"].map((img, i) => (
+          {["djsetup1.webp", "djsetup2.webp", "djsetup3.webp"].map((img, i) => (
             <img
               key={i}
               src={`/images/${img}`}

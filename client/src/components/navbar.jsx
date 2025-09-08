@@ -15,7 +15,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/">
             <img
-              src="/images/name.png"
+              src="/images/name.webp"
               alt="ANIL DJ setup"
               className="object-contain h-7 w-auto cursor-pointer md:h-12"
             />

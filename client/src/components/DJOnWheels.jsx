@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import GallerySection from './gallery';
 import DJGallery from './DJOnWheelsGallery';
 import StatsSection from "./StatsSection";
-import { useEffect, useRef } from 'react';
 
 const DJOnWheels = () => {
   const videoRef = useRef(null);
 
+  // Lazy background image state
+  const heroRef = useRef(null);
+  const [showBg, setShowBg] = useState(false);
+
+  // Video Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -36,6 +40,19 @@ const DJOnWheels = () => {
       }
     };
   }, []);
+
+  // Background image Intersection Observer
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setShowBg(true);
+      },
+      { threshold: 0.1 }
+    );
+    if (heroRef.current) observer.observe(heroRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="bg-white text-gray-800">
       <Helmet>
@@ -63,12 +80,12 @@ const DJOnWheels = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative bg-black text-white overflow-hidden">
+      <section ref={heroRef} className="relative bg-black text-white overflow-hidden">
         {/* Desktop Background */}
         <div
           className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat blur-[1.5px]"
           style={{
-            backgroundImage: "url('/images/desktop-djonwheels.png')", //  for desktop image
+            backgroundImage: showBg ? "url('/images/desktop-djonwheels.webp')" : "none",
           }}
         >
           <div className="w-full h-full bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
@@ -78,7 +95,7 @@ const DJOnWheels = () => {
         <div
           className="block md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px]"
           style={{
-            backgroundImage: "url('/images/mobile-djonwheels.png')", //for  mobile image
+            backgroundImage: showBg ? "url('/images/mobile-djonwheels.webp')" : "none",
           }}
         >
           <div className="w-full h-full bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
@@ -112,7 +129,7 @@ const DJOnWheels = () => {
               <video
                 ref={videoRef}
                 src="https://res.cloudinary.com/dsagj1d3e/video/upload/v1756364254/herovideo_l1zxz2.mp4"
-                poster="/images/onwheelshero.png"
+                poster="/images/onwheelshero.webp"
                 className="w-full aspect-square object-cover"
                 autoPlay
                 muted
@@ -124,7 +141,7 @@ const DJOnWheels = () => {
               />
             </div>
           </div>
-        </div>pp
+        </div>
 
         {/* Decorative Blur Element */}
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full filter blur-3xl" />
@@ -209,7 +226,6 @@ const DJOnWheels = () => {
         </p>
         <a
           href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%E2%80%99m%20interested%20in%20booking%20ANIL%20DJ%20%26%20EVENTS%E2%80%99%20DJ-on-Wheels%20setup%20for%20a%20baraat.%20Could%20you%20please%20share%20the%20pricing%20and%20package%20details%3F"
-
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-white text-purple-700 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition"

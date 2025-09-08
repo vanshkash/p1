@@ -63,6 +63,12 @@ export default function TestimonialSlider() {
   const handleDotClick = (index) => setCurrent(index);
 
   return (
+    <section className="relative py-24 px-4 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 z-0" />
+                <div className="relative z-10">
+                  <h2 className="text-5xl font-extrabold text-center text-indigo-700 mb-14 drop-shadow-lg">
+                    Client Reviews
+                  </h2>
     <div id="testimonials" className="relative max-w-3xl mx-auto px-4 py-16">
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-indigo-100 to-pink-100 rounded-3xl blur-sm z-0" />
@@ -99,5 +105,7 @@ export default function TestimonialSlider() {
         ))}
       </div>
     </div>
+     </div>
+              </section>
   );
 }
