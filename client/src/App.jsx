@@ -6,7 +6,7 @@ import barLoader from '../bar-loader.json';
 import AdminLogin from './components/admin/AdminLogin';
 
 // Lazy-loaded components
-const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
+const AdminDashboard = lazy(() => import('./components/admin/AdminDashboard'));
 const BookingForm = lazy(() => import('./components/contactform'));
 const ContactSection = lazy(() => import('./components/contactSection'));
 const FooterSection = lazy(() => import('./components/footerSection'));

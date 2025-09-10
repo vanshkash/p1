@@ -65,7 +65,7 @@ app.post('/api/auth/login', (req, res) => {
     const token = jwt.sign(
       { email, role: 'admin' },
       process.env.JWT_SECRET,
-      { expiresIn: '15m' }
+      { expiresIn: '5m' }
     );
 
     res.json({ accessToken: token });
