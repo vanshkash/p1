@@ -4,6 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const verifyToken = require('./authMiddleware'); // adjust path if needed
 
 const app = express();
 app.use(cors());
@@ -41,12 +43,34 @@ app.post('/api/bookings', async (req, res) => {
 });
 
 // GET route to fetch all bookings
-app.get('/api/bookings', async (req, res) => {
+app.get('/api/bookings', verifyToken, async (req, res) => {
   try {
     const bookings = await Booking.find();
     res.status(200).json(bookings);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch bookings' });
+  }
+});
+
+
+app.post('/api/auth/login', (req, res) => {
+  const { email, password } = req.body;
+
+  // Match credentials with .env
+  if (
+    email === process.env.ADMIN_EMAIL &&
+    password === process.env.ADMIN_PASSWORD
+  ) {
+    // Create JWT token
+    const token = jwt.sign(
+      { email, role: 'admin' },
+      process.env.JWT_SECRET,
+      { expiresIn: '15m' }
+    );
+
+    res.json({ accessToken: token });
+  } else {
+    res.status(401).json({ message: 'Invalid credentials' });
   }
 });
 

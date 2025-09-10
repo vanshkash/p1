@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import LazyLoadSection from './components/LazyLoadSection';
 import { Player } from '@lottiefiles/react-lottie-player';
 import barLoader from '../bar-loader.json';
+import AdminLogin from './components/admin/AdminLogin';
 
 // Lazy-loaded components
 const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
@@ -57,7 +58,7 @@ function App() {
             <LazyLoadSection><ServicesPage /></LazyLoadSection>
             <LazyLoadSection><GallerySection /></LazyLoadSection>
             <LazyLoadSection><ContactSection /></LazyLoadSection>
-            <LazyLoadSection><TestimonialSlider/></LazyLoadSection>
+            <LazyLoadSection><TestimonialSlider /></LazyLoadSection>
             <LazyLoadSection><StatsSection /></LazyLoadSection>
             <LazyLoadSection><AboutPage /></LazyLoadSection>
             <LazyLoadSection><FooterSection /></LazyLoadSection>
@@ -74,12 +75,9 @@ function App() {
         <Route path="/gallery" element={<><LazyLoadSection><GallerySection showHelmet={true} /><FooterSection /></LazyLoadSection></>} />
         <Route path="/contact" element={<><LazyLoadSection><ContactSection showHelmet={true} /><FooterSection /></LazyLoadSection></>} />
         <Route path="/about" element={<><LazyLoadSection><AboutPage showHelmet={true} /><FooterSection /></LazyLoadSection></>} />
-        <Route path="/reviews" element={ <><TestimonialSlider /><FooterSection /></>} />
-        <Route path="/admin" element={
-  <Suspense fallback={<div className="text-center py-20">Loading Admin Dashboard...</div>}>
-    <AdminDashboard />
-  </Suspense>
-} />
+        <Route path="/reviews" element={<><TestimonialSlider /><FooterSection /></>} />
+        <Route path="/admin" element={<LazyLoadSection><AdminDashboard /></LazyLoadSection>} />
+        <Route path="/admin/login" element={<AdminLogin />} />
       </Routes>
     </BrowserRouter>
   );
