@@ -6,8 +6,11 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const verifyToken = require('./authMiddleware'); // adjust path if needed
+const bookingsRouter = require('./routes/bookings')
+
 
 const app = express();
+app.use('/api/bookings', bookingsRouter)
 app.use(cors());
 app.use(bodyParser.json());
 
