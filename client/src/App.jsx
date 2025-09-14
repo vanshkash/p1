@@ -3,9 +3,10 @@ import { lazy, Suspense } from 'react';
 import LazyLoadSection from './components/LazyLoadSection';
 import { Player } from '@lottiefiles/react-lottie-player';
 import barLoader from '../bar-loader.json';
-import AdminLogin from './components/admin/AdminLogin';
 
 // Lazy-loaded components
+const AdminLogin = lazy(() => import('./components/admin/AdminLogin'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const AdminDashboard = lazy(() => import('./components/admin/AdminDashboard'));
 const BookingForm = lazy(() => import('./components/contactform'));
 const ContactSection = lazy(() => import('./components/contactSection'));
@@ -40,28 +41,35 @@ function App() {
           <>
             <Suspense
               fallback={
-                <div className="flex flex-col items-center justify-center bg-slate-600 py-20 h-screen">
+                <div className="flex flex-col items-center justify-center h-screen 
+                    bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600
+                    animate-gradient">
+                  {/* Loader */}
                   <Player
                     autoplay
                     loop
                     src={barLoader}
-                    style={{ height: '120px', width: '120px' }}
+                    style={{ height: "120px", width: "120px" }}
                   />
-                  <span className="mt-6 text-white text-lg font-semibold">
+
+                  {/* Text */}
+                  <span className="mt-6 text-white text-xl font-bold drop-shadow-lg animate-pulse">
                     Loading Page, please wait...
                   </span>
                 </div>
               }
             >
+
               <HomePage />
             </Suspense>
             <LazyLoadSection><ServicesPage /></LazyLoadSection>
             <LazyLoadSection><GallerySection /></LazyLoadSection>
             <LazyLoadSection><ContactSection /></LazyLoadSection>
-            <LazyLoadSection><TestimonialSlider /></LazyLoadSection>
-            <LazyLoadSection><StatsSection /></LazyLoadSection>
+            <LazyLoadSection height="60vh"><TestimonialSlider /></LazyLoadSection>
+            <LazyLoadSection height="50vh"><StatsSection /></LazyLoadSection>
             <LazyLoadSection><AboutPage /></LazyLoadSection>
-            <LazyLoadSection><FooterSection /></LazyLoadSection>
+            <FooterSection />
+            {/* <LazyLoadSection height="220px"><FooterSection /></LazyLoadSection> */}
           </>
         } />
 
@@ -77,7 +85,8 @@ function App() {
         <Route path="/about" element={<><LazyLoadSection><AboutPage showHelmet={true} /><FooterSection /></LazyLoadSection></>} />
         <Route path="/reviews" element={<><TestimonialSlider /><FooterSection /></>} />
         <Route path="/admin" element={<LazyLoadSection><AdminDashboard /></LazyLoadSection>} />
-        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/login" element={<LazyLoadSection><AdminLogin /></LazyLoadSection>} />
+        <Route path="/privacy-policy" element={<><LazyLoadSection><PrivacyPolicy /></LazyLoadSection><FooterSection /></>} />
       </Routes>
     </BrowserRouter>
   );

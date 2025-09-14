@@ -56,7 +56,7 @@ export default function AdminDashboard() {
         <Helmet>
           <title>Admin Authentication Required | ANIL DJ & EVENTS</title>
         </Helmet>
-        <h2 className="text-2xl font-bold mb-3 text-blue-700 md:text-4xl">
+        <h2 className="text-2xl  text-center font-bold mb-3 text-blue-700 md:text-4xl">
           🔐 Admin Authentication Required
         </h2>
         <p className="mb-6 text-gray-600">

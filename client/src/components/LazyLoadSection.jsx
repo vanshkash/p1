@@ -1,22 +1,40 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-const LazyLoadSection = ({ children, fallback = <div className="flex items-center justify-center py-96">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-purple-500"></div>
-      <span className="ml-4 text-gray-600 text-lg font-semibold">
-        Loading Page, please wait...
-      </span>
-    </div> }) => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [hasBeenInView, setHasBeenInView] = useState(false);
+const LazyLoadSection = ({
+  children,
+  // default placeholder height; override per-section if you need
+  height = '100vh'
+}) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (inView) setHasBeenInView(true);
+    if (inView) {
+      setIsVisible(true);
+    }
   }, [inView]);
 
   return (
-    <div ref={ref}>
-      {hasBeenInView ? <Suspense fallback={fallback}>{children}</Suspense> : fallback}
+    <div
+      ref={ref}
+      style={{
+        minHeight: height,                         // placeholder height
+        opacity: isVisible ? 1 : 0,                // fade-in
+        transform: isVisible                       // slide up
+          ? 'translateY(0)' 
+          : 'translateY(40px)',
+        transition: 'opacity 0.9s ease-out, transform 0.9s ease-out'
+      }}
+    >
+      {isVisible && (
+        <Suspense fallback={null}>
+          {children}
+        </Suspense>
+      )}
     </div>
   );
 };

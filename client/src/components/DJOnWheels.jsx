@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import GallerySection from './gallery';
 import DJGallery from './DJOnWheelsGallery';
 import StatsSection from "./StatsSection";
 
@@ -128,8 +127,9 @@ const DJOnWheels = () => {
             <div className="max-w-sm mx-auto group relative p-1 rounded-xl bg-gradient-to-br from-yellow-300 via-red-400 to-green-500 shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-pink-300 transition-transform">
               <video
                 ref={videoRef}
-                src="https://res.cloudinary.com/dsagj1d3e/video/upload/v1756364254/herovideo_l1zxz2.mp4"
-                poster="/images/onwheelshero.webp"
+                // src="https://res.cloudinary.com/dsagj1d3e/video/upload/v1756364254/herovideo_l1zxz2.mp4"
+                src="https://res.cloudinary.com/duq50dwkb/video/upload/v1757782140/onwheels2_splpoa.mp4"
+                poster="/images/wheelsposter/wheels1.webp"
                 className="w-full aspect-square object-cover"
                 autoPlay
                 muted

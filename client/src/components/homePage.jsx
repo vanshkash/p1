@@ -34,23 +34,23 @@ export default function HomePage() {
       >
         {/* Background Image with AVIF & WebP support */}
         <div className="absolute inset-0">
-          <picture>
-            <source
+          {/* <picture> */}
+            {/* <source
               srcSet="https://res.cloudinary.com/dsagj1d3e/image/upload/f_avif,q_auto/v1756146704/home_xqcjlx.jpg"
               type="image/avif"
-            />
-            <source
+            /> */}
+            {/* <source
               srcSet="https://res.cloudinary.com/dsagj1d3e/image/upload/f_webp,q_auto/v1756146704/home_xqcjlx.jpg"
               type="image/webp"
-            />
+            /> */}
             <img
-              src="https://res.cloudinary.com/dsagj1d3e/image/upload/q_auto/v1756146704/home_xqcjlx.jpg"
+              src="/images/home.webp"
               loading="eager"
               alt="ANIL DJ setup with mobile sound system and LED lights"
               className="w-full h-full object-cover brightness-75"
             />
-          </picture>
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-transparent to-black opacity-70"></div>
+          {/* </picture> */}
+          {/* <div></div> */}
         </div>
 
         {/* Content on top of image */}

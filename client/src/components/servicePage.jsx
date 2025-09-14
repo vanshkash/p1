@@ -65,7 +65,7 @@ export default function ServicesPage({ showHelmet = false }) {
 
       <section
         id="services"
-        className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-[#fdf6ff] via-[#fefefe] to-[#f0f9ff] text-gray-900"
+        className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-[#f9efff] via-[#ffeeee] to-[#e0eef8] text-gray-900"
       >
         {/* Decorative pastel blobs */}
         <div className="absolute inset-0 pointer-events-none z-0">
