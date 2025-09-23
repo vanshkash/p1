@@ -1,76 +1,94 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim"; // ✅ Slim build (lightweight)
 import HeroTypedText from "./HeroTypedText";
 
 export default function HomePage() {
+  const particlesInit = async (engine) => {
+    await loadSlim(engine); // ✅ loadSlim instead of loadFull
+  };
+
   return (
-    <>
-      <Helmet>
-        <title>ANIL DJ & EVENTS | Wedding DJ on Wheels in Hapur</title>
-        <meta
-          name="description"
-          content="Book ANIL DJ & EVENTS for unforgettable celebrations and baraats. High-energy Indian wedding DJ services with mobile setups, LED displays, and custom event packages."
+    <section className="relative min-h-screen flex items-center justify-center px-6 text-white overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          // src="/images/home.webp"
+          src="https://res.cloudinary.com/dtetjnumo/image/upload/v1758294393/home_vygfjy.webp"
+          loading="eager"
+          alt="ANIL DJ setup with mobile sound system and LED lights"
+          className="w-full h-full object-cover"
         />
-        <meta
-          name="keywords"
-          content="Indian wedding DJ, baraat sound system, DJ on wheels, Hapur DJ, LED display DJ, ANIL DJ & EVENTS HAPUR, Best DJ in Hapur. Best DJ in Noida"
-        />
-        <meta name="author" content="Vansh | ANIL DJ & EVENTS" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+      </div>
 
-        {/* Open Graph for social sharing */}
-        <meta property="og:title" content="ANIL DJ & EVENTS | Wedding DJ on Wheels" />
-        <meta
-          property="og:description"
-          content="Book the most energetic DJ experience for your Indian wedding. Mobile DJ, LED displays, and full event packages."
-        />
-        <meta property="og:image" content="https://anildjevents.netlify.app/images/home.webp" />
-        <meta property="og:url" content="https://anildjevents.netlify.app/" />
-        <meta property="og:type" content="website" />
-      </Helmet>
+      {/* Particles */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        className="absolute inset-0"
+        options={{
+          background: { color: "transparent" },
+          fullScreen: { enable: false },
+          particles: {
+            number: { value: 25 },
+            color: { value: ["#ff0080", "#ffbf00", "#00d9ff"] },
+            shape: { type: "circle" },
+            opacity: { value: 0.7 },
+            size: { value: 4, random: true },
+            move: {
+              enable: true,
+              speed: 1.2,
+              direction: "none",
+              outModes: { default: "out" },
+            },
+          },
+        }}
+      />
 
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center justify-center px-6 text-white"
+      {/* Content */}
+      <motion.div
+        className="relative text-center max-w-2xl z-10"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
-        {/* Background Image with AVIF & WebP support */}
-        <div className="absolute inset-0">
-          {/* <picture> */}
-            {/* <source
-              srcSet="https://res.cloudinary.com/dsagj1d3e/image/upload/f_avif,q_auto/v1756146704/home_xqcjlx.jpg"
-              type="image/avif"
-            /> */}
-            {/* <source
-              srcSet="https://res.cloudinary.com/dsagj1d3e/image/upload/f_webp,q_auto/v1756146704/home_xqcjlx.jpg"
-              type="image/webp"
-            /> */}
-            <img
-              src="/images/home.webp"
-              loading="eager"
-              alt="ANIL DJ setup with mobile sound system and LED lights"
-              className="w-full h-full object-cover brightness-75"
-            />
-          {/* </picture> */}
-          {/* <div></div> */}
-        </div>
+        <motion.h1
+          className="text-4xl md:text-7xl font-extrabold mb-8 text-blue-500 drop-shadow-[0_0_10px_#3b82f6]"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6, type: "spring" }}
+        >
+          ANIL DJ & EVENTS
+        </motion.h1>
 
-        {/* Content on top of image */}
-        <div className="relative text-center max-w-2xl z-10">
-          <h1 className="text-4xl md:text-7xl font-extrabold mb-8 text-blue-500 drop-shadow-[0_0_10px_#3b82f6] hover:drop-shadow-[0_0_20px_#3b82f6] transition duration-300">
-            ANIL DJ & EVENTS
-          </h1>
-          <div className="text-3xl font-bold md:text-3xl mb-8 text-blue-200">
-            Bringing electrifying energy to your <HeroTypedText />
-          </div>
-          <a
-            href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20my%20upcoming%20event!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-yellow-400 shadow-lg hover:scale-105 transition duration-300"
-          >
-            Book Your Event
-          </a>
-        </div>
-      </section>
-    </>
+        <motion.div
+          className="text-3xl font-bold md:text-3xl mb-8 text-blue-200"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          Bringing electrifying energy to your <HeroTypedText />
+        </motion.div>
+
+        <motion.a
+          href="https://wa.me/918923426667?text=Hi%20Shivam%2C%20I%20want%20to%20book%20ANIL%20DJ%20%26%20EVENTS%20for%20my%20upcoming%20event!"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-white font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-yellow-400 shadow-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          whileHover={{
+            scale: 1.08,
+            boxShadow: "0px 0px 25px rgba(255, 200, 100, 0.8)",
+          }}
+        >
+          Book Your Event
+        </motion.a>
+      </motion.div>
+    </section>
   );
 }

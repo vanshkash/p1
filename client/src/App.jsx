@@ -42,7 +42,7 @@ function App() {
             <Suspense
               fallback={
                 <div className="flex flex-col items-center justify-center h-screen 
-                    bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600
+                    bg-gradient-to-br from-pink-300 via-purple-400 to-indigo-500
                     animate-gradient">
                   {/* Loader */}
                   <Player

@@ -8,48 +8,43 @@ import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
 import { Helmet } from "react-helmet-async";
-// cloudinary sometimes has issues with this video, using another account-"vanshkas87@gmail.com"
+import { motion } from "framer-motion";
+
 const galleryItems = [
   {
-    // src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702202/event1_vhb7fj.mp4",
     src: "https://res.cloudinary.com/dtetjnumo/video/upload/f_auto,q_auto/v1757862508/noida_event_y259uh.mp4",
     alt: "Ghaziabad Event in action",
     poster: "images/homegalleryposter/event1.webp",
     type: "video",
   },
   {
-    // src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702292/event2_p6noph.mp4",
     src: "https://res.cloudinary.com/dtetjnumo/video/upload/f_auto,q_auto/v1757788960/event2_g9nasd.mp4",
     alt: "Noida Event in action",
     poster: "images/homegalleryposter/event4.webp",
     type: "video",
   },
   {
-    // src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755702945/event3_xt8fkw.mp4",
     src: "https://res.cloudinary.com/dtetjnumo/video/upload/f_auto,q_auto/v1757789355/event3_y8essb.mp4",
     alt: "Wedding Setup in Hapur",
     poster: "images/homegalleryposter/event3.webp",
     type: "video",
   },
   {
-    // src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1756484731/noidaevent1_jvdgxe.mp4",
     src: "https://res.cloudinary.com/dtetjnumo/video/upload/f_auto,q_auto/v1757788002/noidaevent1_rg5fm8.mp4",
     alt: "DJ with Crowd in Noida",
     poster: "images/homegalleryposter/noidaevent1.webp",
     type: "video",
   },
   {
-    // src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1755703668/miniwheels_n33yjl.mp4",
-    src: "https://res.cloudinary.com/duq50dwkb/video/upload/f_auto,q_auto/v1757863357/wheels2_bmbquq.mp4", // reused from DJ on wheels gallery (englishmylovr@gmail.com)
+    src: "https://res.cloudinary.com/duq50dwkb/video/upload/f_auto,q_auto/v1757863357/wheels2_bmbquq.mp4",
     alt: "Baraat on wheels in action",
     poster: "images/wheelsposter/6.webp",
     type: "video",
   },
   {
-    // src: "https://res.cloudinary.com/dsagj1d3e/video/upload/v1756484306/noidaevent2_r9nl1g.mp4",
     src: "https://res.cloudinary.com/dtetjnumo/video/upload/f_auto,q_auto/v1757788689/noidaevent2_pzth7t.mp4",
-    poster: "images/homegalleryposter/noidaevent2.webp",
     alt: "DJ + Crowd in Noida",
+    poster: "images/homegalleryposter/noidaevent2.webp",
     type: "video",
   },
 ];
@@ -99,13 +94,19 @@ export default function SpotlightGallery({ showHelmet = false }) {
       )}
 
       <section className="relative py-20 px-6 md:px-12 bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 shadow-xl">
-        {/* 🌈 Decorative Background */}
+        {/* Decorative Background */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="w-full h-full bg-gradient-to-tr from-white/10 via-indigo-100/20 to-pink-100/10 blur-sm opacity-30" />
         </div>
 
-        {/* 🎬 Header */}
-        <div className="relative z-10 text-center mb-16">
+        {/* Animated Header */}
+        <motion.div
+          className="relative z-10 text-center mb-16"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-5xl font-extrabold text-indigo-700 mb-4 tracking-wide drop-shadow-md">
             Gallery
           </h2>
@@ -114,12 +115,17 @@ export default function SpotlightGallery({ showHelmet = false }) {
             <span className="text-pink-600 font-semibold">setup</span>, and{" "}
             <span className="text-indigo-600 font-semibold">unforgettable moments</span> we create.
           </p>
-          <div className="mt-4">
+          <motion.div
+            className="mt-4"
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="w-24 h-1 mx-auto bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* 🎯 Swiper Slider */}
+        {/* Animated Swiper Slider */}
         <Swiper
           modules={[Navigation, Autoplay, Pagination]}
           navigation
@@ -132,9 +138,17 @@ export default function SpotlightGallery({ showHelmet = false }) {
         >
           {galleryItems.map((item, i) => (
             <SwiperSlide key={i}>
-              <div className="flex justify-center">
-                <div
-                  className="bg-white rounded-2xl shadow-2xl border border-indigo-200 hover:border-indigo-400 transition duration-300 overflow-hidden group cursor-pointer transform hover:scale-[1.02]"
+              <motion.div
+                className="flex justify-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.03, boxShadow: "0px 8px 25px rgba(0,0,0,0.25)" }}
+                  transition={{ type: "spring", stiffness: 250, damping: 12 }}
+                  className="bg-white rounded-2xl shadow-2xl border border-indigo-200 hover:border-indigo-400 overflow-hidden group cursor-pointer"
                   onClick={() => {
                     setIndex(i);
                     setOpen(true);
@@ -158,13 +172,13 @@ export default function SpotlightGallery({ showHelmet = false }) {
                       {item.alt}
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* 💡 Lightbox Viewer */}
+        {/* Lightbox */}
         <Lightbox
           open={open}
           close={() => setOpen(false)}

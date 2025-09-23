@@ -1,6 +1,7 @@
 
 import BookingForm from './contactform'
 import { Helmet } from 'react-helmet-async';
+import { motion } from "framer-motion";
 
 export default function ContactSection({ showHelmet = false }) {
   return (
@@ -24,7 +25,12 @@ export default function ContactSection({ showHelmet = false }) {
         <meta property="og:url" content="https://anildjevents.netlify.app/contact" />
       </Helmet>
       )}
-    <section
+    <motion.section
+    // className="relative z-10 text-center mb-16"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
       id="contact"
       className="bg-gray-100 py-16 px-6 md:px-12"
       >
@@ -36,7 +42,7 @@ export default function ContactSection({ showHelmet = false }) {
       </div>
 
       <BookingForm />
-    </section>
+    </motion.section>
       </>
   );
 }

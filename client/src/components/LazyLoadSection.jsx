@@ -1,40 +1,54 @@
-import React, { Suspense, useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import React, { Suspense, useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 const LazyLoadSection = ({
   children,
-  // default placeholder height; override per-section if you need
-  height = '100vh'
+  height = "100vh", // placeholder height
+  fallback = null, // allow custom fallback
+  animation = "up", // "up" | "down" | "left" | "right" | "fade"
+  duration = 0.8, // animation speed
+  delay = 0, // optional delay
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
+
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (inView) {
-      setIsVisible(true);
-    }
+    if (inView) setIsVisible(true);
   }, [inView]);
 
+  // Motion Variants for smooth animation
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: animation === "up" ? 40 : animation === "down" ? -40 : 0,
+      x: animation === "left" ? 40 : animation === "right" ? -40 : 0,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: { duration, delay, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div
-      ref={ref}
-      style={{
-        minHeight: height,                         // placeholder height
-        opacity: isVisible ? 1 : 0,                // fade-in
-        transform: isVisible                       // slide up
-          ? 'translateY(0)' 
-          : 'translateY(40px)',
-        transition: 'opacity 0.9s ease-out, transform 0.9s ease-out'
-      }}
-    >
-      {isVisible && (
-        <Suspense fallback={null}>
-          {children}
-        </Suspense>
-      )}
+    <div ref={ref} style={{ minHeight: height }}>
+      <motion.div
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        variants={variants}
+      >
+        {isVisible ? (
+          <Suspense fallback={fallback}>{children}</Suspense>
+        ) : (
+          fallback
+        )}
+      </motion.div>
     </div>
   );
 };
